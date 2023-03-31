@@ -1,0 +1,1 @@
+export { ProfileSnapGrid } from './ProfileSnapGrid';

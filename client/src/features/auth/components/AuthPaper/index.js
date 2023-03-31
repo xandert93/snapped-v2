@@ -1,0 +1,1 @@
+export { AuthPaper } from './AuthPaper';

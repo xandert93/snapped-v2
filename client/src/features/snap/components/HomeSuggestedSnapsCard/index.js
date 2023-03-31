@@ -1,0 +1,1 @@
+export { HomeSuggestedSnapsCard } from './HomeSuggestedSnapsCard';

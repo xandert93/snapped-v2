@@ -1,0 +1,1 @@
+export { TopNavigationSearchBar } from './TopNavigationSearchBar';

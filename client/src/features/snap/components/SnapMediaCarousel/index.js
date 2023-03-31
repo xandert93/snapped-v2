@@ -1,0 +1,1 @@
+export { SnapMediaCarousel } from './SnapMediaCarousel';

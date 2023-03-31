@@ -1,0 +1,1 @@
+export { SnapCardCaption } from './SnapCardCaption';

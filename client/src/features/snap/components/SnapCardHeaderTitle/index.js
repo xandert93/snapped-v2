@@ -1,0 +1,1 @@
+export { SnapCardHeaderTitle } from './SnapCardHeaderTitle';

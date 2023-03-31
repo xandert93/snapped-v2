@@ -1,0 +1,1 @@
+export { genAppTheme } from './genAppTheme';

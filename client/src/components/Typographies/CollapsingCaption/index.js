@@ -1,0 +1,1 @@
+export { CollapsingCaption } from './CollapsingCaption';

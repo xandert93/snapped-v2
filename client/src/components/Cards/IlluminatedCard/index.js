@@ -1,0 +1,1 @@
+export { IlluminatedCard } from './IlluminatedCard';

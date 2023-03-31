@@ -1,0 +1,1 @@
+export { RegistrationReCAPTCHA } from './RegistrationReCAPTCHA';

@@ -1,0 +1,2 @@
+1) .png used as application logo. Must have transparent background (or background removed). 
+2) .png converted into .ico, which is used as application favicon

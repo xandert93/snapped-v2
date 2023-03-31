@@ -1,0 +1,1 @@
+export { SnapCardHeaderAvatar } from './SnapCardHeaderAvatar';

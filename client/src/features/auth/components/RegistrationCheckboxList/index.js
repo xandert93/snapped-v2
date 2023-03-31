@@ -1,0 +1,1 @@
+export { RegistrationCheckboxList } from './RegistrationCheckboxList';

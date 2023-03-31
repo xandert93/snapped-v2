@@ -1,0 +1,1 @@
+export { SnapCardFooter } from './SnapCardFooter';

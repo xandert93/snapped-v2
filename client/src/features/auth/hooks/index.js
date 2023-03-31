@@ -1,0 +1,1 @@
+export { useRegistrationCredential } from './useRegistrationCredential';

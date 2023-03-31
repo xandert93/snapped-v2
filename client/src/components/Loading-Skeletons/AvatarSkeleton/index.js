@@ -1,0 +1,1 @@
+export { AvatarSkeleton } from './AvatarSkeleton';

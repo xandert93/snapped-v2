@@ -1,0 +1,1 @@
+export { CompactPaper } from './CompactPaper';

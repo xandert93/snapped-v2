@@ -1,0 +1,1 @@
+export { ProfileHeaderData } from './ProfileHeaderData';

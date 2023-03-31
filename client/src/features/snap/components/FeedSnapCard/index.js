@@ -1,0 +1,1 @@
+export { FeedSnapCard } from './FeedSnapCard';

@@ -1,0 +1,1 @@
+export { RegistrationNamesForm } from './RegistrationNamesForm';

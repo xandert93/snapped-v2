@@ -1,0 +1,7 @@
+{
+  "name": "snapped-server",
+  "version": "1.0.0",
+  "description": "Backend API for Snapped",
+  "main": "index.js",
+  "type": "module"
+}

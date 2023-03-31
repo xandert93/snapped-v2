@@ -1,0 +1,1 @@
+export { RegistrationMobileStepper } from './RegistrationMobileStepper';
