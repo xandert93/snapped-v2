@@ -2,7 +2,6 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
 import compression from 'compression';
-import morgan from 'morgan';
 import url from 'url';
 import path from 'path';
 import fs from 'fs';
