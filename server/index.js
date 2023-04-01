@@ -31,7 +31,7 @@ await connectDB();
 
 const app = express();
 
-app.use(helmet());
+// app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
 // app.use(csrfProtection());
@@ -64,6 +64,8 @@ const server = app.listen(PORT, () =>
 initSocketServer(server);
 
 /*
+- I have disabled `helmet` for now, because without configuration, it's not allowing the client to use Google Login, Facebook Login or Cloudinary scripts
+
 - importing 'colors' executes the module code, which modifies Node's String.prototype so that we can call new methods on any String
 
 - check response payload sizes when app functional and see if compression is required for all requests...
