@@ -1,11 +1,10 @@
 import _ from 'lodash';
-// import cryptoRandomString from 'crypto-random-String';
+import cryptoRandomString from 'crypto-random-string';
 import dateFns from 'date-fns';
 
 export const toTitleCase = (str) => _.startCase(_.toLower(str));
 
-// export const genRandomString = (length) => cryptoRandomString({ length });
-export const genRandomString = (length) => 'blaaaaaaaaaaaaaaaah';
+export const genRandomString = (length) => cryptoRandomString({ length });
 
 export const genRelativeDateStr = (date) => {
   return dateFns.formatDistance(date, Date.now(), { addSuffix: true });
