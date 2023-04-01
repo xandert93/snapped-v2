@@ -5,6 +5,8 @@ const config = {
   useNewUrlParser: true,
 };
 
+mongoose.set('strictQuery', true); // 1
+
 export const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.DB_URL, config);
@@ -14,3 +16,9 @@ export const connectDB = async () => {
     process.exit(1);
   }
 };
+
+/*
+1) Makes schemas "strict" i.e. only fields specified in our schemas will be saved to 
+   the database
+
+*/

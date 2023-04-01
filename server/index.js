@@ -38,6 +38,8 @@ app.use(cookieParser());
 
 if (!inProduction) {
   import('colors');
+  const { default: morgan } = await import('morgan');
+
   // app.use(morgan('dev'));
 }
 
