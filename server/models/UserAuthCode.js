@@ -1,8 +1,8 @@
 import { Schema, model } from 'mongoose';
 
-import { isObjectId } from '../utils/mongoose-utils';
-import { genRelativeDateStr } from '../utils/helpers';
-import { BadReqError, ConflictError } from '../utils/error-types';
+import { isObjectId } from '../utils/mongoose-utils.js';
+import { genRelativeDateStr } from '../utils/helpers.js';
+import { BadReqError, ConflictError } from '../utils/error-types.js';
 
 const userAuthCodeSchema = new Schema(
   {

@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { cld } from '../utils';
+import { cld } from '../utils/index.js';
 
 //1
 export const uploadImage = async (req, res, next) => {

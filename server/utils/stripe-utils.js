@@ -1,5 +1,5 @@
-import { stripe } from '../config';
-import { numOf } from './helpers';
+import { stripe } from '../config/index.js';
+import { numOf } from './helpers.js';
 
 const { CLIENT_ORIGIN } = process.env;
 

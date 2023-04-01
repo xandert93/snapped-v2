@@ -1,4 +1,4 @@
-import { s3 } from '../config';
+import { s3 } from '../config/index.js';
 
 export const deleteFileFromS3 = (filename) => {
   const deletionParams = {

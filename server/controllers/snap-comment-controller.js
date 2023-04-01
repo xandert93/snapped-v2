@@ -1,7 +1,7 @@
-import { SnapComment, Notification } from '../models/';
-import { toObjectId } from '../utils/mongoose-utils';
+import { SnapComment, Notification } from '../models/index.js';
+import { toObjectId } from '../utils/mongoose-utils.js';
 
-import { emitNewNotification, emitNotificationUndone } from '../utils/socket-utils';
+import { emitNewNotification, emitNotificationUndone } from '../utils/socket-utils.js';
 
 export const getSnapComments = async (req, res) => {
   const snapId = toObjectId(req.params.id);

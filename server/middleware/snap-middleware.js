@@ -1,5 +1,5 @@
-import { Snap, SnapComment } from '../models';
-import { NotFoundError } from '../utils/error-types';
+import { Snap, SnapComment } from '../models/index.js';
+import { NotFoundError } from '../utils/error-types.js';
 
 export const loadSnap = async (req, res, next) => {
   const { id } = req.params;

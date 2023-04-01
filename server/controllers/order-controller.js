@@ -1,4 +1,4 @@
-import { Order } from '../models';
+import { Order } from '../models/index.js';
 
 export const getOrders = async (req, res) => {
   //*** obviously add some kind of pagination too - page number or an offset

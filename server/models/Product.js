@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import { ForbiddenError, NotFoundError } from '../utils/error-types';
+import { ForbiddenError, NotFoundError } from '../utils/error-types.js';
 
 const productSchema = new Schema(
   {

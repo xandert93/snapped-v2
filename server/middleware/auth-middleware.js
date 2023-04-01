@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { getAccessToken, verifyAccessToken } from '../utils/auth-utils';
-import { AuthError, BadReqError, ForbiddenError } from '../utils/error-types';
+import { getAccessToken, verifyAccessToken } from '../utils/auth-utils.js';
+import { AuthError, BadReqError, ForbiddenError } from '../utils/error-types.js';
 
 export const ensureAuth = (req, res, next) => {
   const { method, path } = req;

@@ -1,5 +1,5 @@
-import { NotFoundError } from '../utils/error-types';
-import { isObjectId } from '../utils/mongoose-utils';
+import { NotFoundError } from '../utils/error-types.js';
+import { isObjectId } from '../utils/mongoose-utils.js';
 
 export const ensureIsObjectId = (docName) => (req, res, next) => {
   const { id } = req.params;

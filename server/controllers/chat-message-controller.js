@@ -1,7 +1,7 @@
-import { ChatMessage } from '../models/';
+import { ChatMessage } from '../models/index.js';
 
-import { toObjectId } from '../utils/mongoose-utils';
-import { NotFoundError } from '../utils/error-types';
+import { toObjectId } from '../utils/mongoose-utils.js';
+import { NotFoundError } from '../utils/error-types.js';
 
 //GET @ '/?chatId=_'
 export const getChatMessages = async (req, res) => {

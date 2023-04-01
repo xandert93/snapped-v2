@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { AuthError } from '../../utils/error-types';
+import { AuthError } from '../../utils/error-types.js';
 
 const Schema = mongoose.Schema;
 

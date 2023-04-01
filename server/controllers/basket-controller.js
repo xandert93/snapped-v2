@@ -1,6 +1,6 @@
-import { Basket, Product } from '../models';
-import { toObjectId } from '../utils/mongoose-utils';
-import { ForbiddenError, NotFoundError } from '../utils/error-types';
+import { Basket, Product } from '../models/index.js';
+import { toObjectId } from '../utils/mongoose-utils.js';
+import { ForbiddenError, NotFoundError } from '../utils/error-types.js';
 
 export const getUsersBasket = async (req, res) => {
   const userId = toObjectId(req.userId);

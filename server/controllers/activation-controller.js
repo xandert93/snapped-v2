@@ -1,5 +1,5 @@
-import { User, UserAuthCode } from '../models';
-import { verifyRefreshToken, genTokens, setRefreshCookie } from '../utils/auth-utils';
+import { User, UserAuthCode } from '../models/index.js';
+import { verifyRefreshToken, genTokens, setRefreshCookie } from '../utils/auth-utils.js';
 
 export const activateAccount = async (req, res) => {
   const { userId, authCode } = req.body;

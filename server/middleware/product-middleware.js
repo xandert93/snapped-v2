@@ -1,5 +1,5 @@
-import { Order, Product, ProductReview } from '../models';
-import { NotFoundError, ForbiddenError } from '../utils/error-types';
+import { Order, Product, ProductReview } from '../models/index.js';
+import { NotFoundError, ForbiddenError } from '../utils/error-types.js';
 
 export const loadProduct = async (req, res, next) => {
   const { id } = req.params;

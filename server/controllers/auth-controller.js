@@ -1,4 +1,4 @@
-import { User } from '../models';
+import { User } from '../models/index.js';
 import {
   genTokens,
   verifyGoogleIdToken,
@@ -7,11 +7,11 @@ import {
   genFacebookUser,
   verifyRefreshToken,
   setRefreshCookie,
-} from '../utils/auth-utils';
+} from '../utils/auth-utils.js';
 
-import { checkUnreserved } from '../utils/validators';
-import { AuthError, BadReqError, ConflictError } from '../utils/error-types';
-import { toObjectId } from '../utils/mongoose-utils';
+import { checkUnreserved } from '../utils/validators.js';
+import { AuthError, BadReqError, ConflictError } from '../utils/error-types.js';
+import { toObjectId } from '../utils/mongoose-utils.js';
 
 /* let refreshTokens = []; */
 

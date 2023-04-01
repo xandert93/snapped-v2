@@ -9,15 +9,15 @@ import {
   getProduct,
   updateProduct,
   deleteProduct,
-} from '../../controllers/product-controller';
+} from '../../controllers/product-controller.js';
 
 import {
   ensureIsAdmin,
   ensureIsNotSubscriber,
   ensureIsSubscriber,
   ensureIsVerified,
-} from '../../middleware/auth-middleware';
-import { ensureIsObjectId, loadPagination } from '../../middleware/mongoose-middleware';
+} from '../../middleware/auth-middleware.js';
+import { ensureIsObjectId, loadPagination } from '../../middleware/mongoose-middleware.js';
 
 const productRouter = express.Router();
 

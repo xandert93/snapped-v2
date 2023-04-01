@@ -13,11 +13,15 @@ import {
   getCSRFToken,
   initSocketServer,
   stripeEventHandler,
-} from './config';
-import seedDB from './seed';
+} from './config/index.js';
+import seedDB from './seed/index.js';
 
-import { authRouter, apiRouter } from './routes';
-import { clientErrorResponder, errorLogger, errorResponder } from './middleware/error-middleware';
+import { authRouter, apiRouter } from './routes/index.js';
+import {
+  clientErrorResponder,
+  errorLogger,
+  errorResponder,
+} from './middleware/error-middleware.js';
 
 const dirName = path.dirname(url.fileURLToPath(import.meta.url));
 const { NODE_ENV, HOST, PORT } = process.env;

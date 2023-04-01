@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
-import { SnapLike, SnapComment, Notification } from '../models';
-import { cld } from '../utils/';
+import { SnapLike, SnapComment, Notification } from '../models/index.js';
+import { cld } from '../utils/index.js';
 
 //originally wanted to create nested Schema of { description: { location, caption, tags, isPublic } }, however, given how often 'snaps' collection queried, to query any of this data, it became cumbersome as I had to write 'description.propName' everywhere. The nested schema also made sense, given that only this part of a snap is actually patchable and that it well could be the only data used to query a snap from the FE (then again, FE could also query by "createdAt"...)
 

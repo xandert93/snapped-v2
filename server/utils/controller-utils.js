@@ -1,4 +1,4 @@
-import { toObjectId } from './mongoose-utils';
+import { toObjectId } from './mongoose-utils.js';
 
 const genPaginationStages = (pagination) => {
   // e.g. => { $skip: 10, $limit: 5 }

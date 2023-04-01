@@ -1,2 +1,2 @@
-export { default as authRouter } from './auth-router';
-export { default as apiRouter } from './api-router';
+export { authRouter } from './auth-router.js';
+export { apiRouter } from './api-router/index.js';

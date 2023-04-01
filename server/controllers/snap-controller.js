@@ -1,12 +1,12 @@
-import { Notification, Snap, SnapLike, UserFollowing } from '../models';
-import { toObjectId } from '../utils/mongoose-utils';
-import { NotFoundError, BadReqError } from '../utils/error-types';
-import { genSnapsPipeline } from '../utils/controller-utils';
+import { Notification, Snap, SnapLike, UserFollowing } from '../models/index.js';
+import { toObjectId } from '../utils/mongoose-utils.js';
+import { NotFoundError, BadReqError } from '../utils/error-types.js';
+import { genSnapsPipeline } from '../utils/controller-utils.js';
 import {
   emitNewNotification,
   emitNewSnapToFollowers,
   emitNotificationUndone,
-} from '../utils/socket-utils';
+} from '../utils/socket-utils.js';
 
 //POST @ '/' + { location, caption, tags, isPublic }
 export const createSnap = async (req, res) => {

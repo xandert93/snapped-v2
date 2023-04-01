@@ -1,8 +1,8 @@
-import { User, UserAuthCode } from '../models';
+import { User, UserAuthCode } from '../models/index.js';
 
-import { createAndSendEmail } from '../utils/nodemailer';
-import { genRandomString, genURLWithParams, getClientOrigin } from '../utils/helpers';
-import { NotFoundError } from '../utils/error-types';
+import { createAndSendEmail } from '../utils/nodemailer.js';
+import { genRandomString, genURLWithParams, getClientOrigin } from '../utils/helpers.js';
+import { NotFoundError } from '../utils/error-types.js';
 
 export const sendPasswordResetEmail = async (req, res) => {
   const { email } = req.body;

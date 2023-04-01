@@ -1,5 +1,5 @@
-import { User } from '../models';
-import { ForbiddenError, NotFoundError } from '../utils/error-types';
+import { User } from '../models/index.js';
+import { ForbiddenError, NotFoundError } from '../utils/error-types.js';
 
 export const loadUser = async (req, res, next) => {
   const { id } = req.params;

@@ -1,5 +1,5 @@
-import { Product } from '../models';
-import { toObjectId } from '../utils/mongoose-utils';
+import { Product } from '../models/index.js';
+import { toObjectId } from '../utils/mongoose-utils.js';
 import {
   getOneTimeCheckoutSession,
   genShippingOptions,
@@ -7,7 +7,7 @@ import {
   getShippingRates,
   getBillingSession,
   sortShippingRates,
-} from '../utils/stripe-utils';
+} from '../utils/stripe-utils.js';
 
 // GET @ '/'
 export const getProducts = async (req, res) => {

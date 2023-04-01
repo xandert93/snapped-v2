@@ -1,4 +1,4 @@
-import { UserAuthCode } from '../models';
+import { UserAuthCode } from '../models/index.js';
 
 import rateLimit from 'express-rate-limit';
 

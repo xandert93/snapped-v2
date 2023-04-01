@@ -14,14 +14,14 @@ import {
   toggleSnapLike,
   getSnapLikers,
   getHashtagSnapCount,
-} from '../../controllers/snap-controller';
+} from '../../controllers/snap-controller.js';
 
-import { loadSnap } from '../../middleware/snap-middleware';
-import { handleFilesUpload } from '../../middleware/multer-middleware';
-import { ensureUserIdMatch } from '../../middleware/user-middleware';
-import { ensureIsObjectId, loadScrollPagination } from '../../middleware/mongoose-middleware';
-import { ensureIsReqUsers } from '../../middleware/auth-middleware';
-import { uploadImages } from '../../middleware/cloudinary-middleware';
+import { loadSnap } from '../../middleware/snap-middleware.js';
+import { handleFilesUpload } from '../../middleware/multer-middleware.js';
+import { ensureUserIdMatch } from '../../middleware/user-middleware.js';
+import { ensureIsObjectId, loadScrollPagination } from '../../middleware/mongoose-middleware.js';
+import { ensureIsReqUsers } from '../../middleware/auth-middleware.js';
+import { uploadImages } from '../../middleware/cloudinary-middleware.js';
 
 const snapRouter = express.Router();
 

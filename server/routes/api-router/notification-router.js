@@ -3,8 +3,8 @@ import {
   getReqUsersNotifications,
   getReqUserUnseenNotificationCount,
   updateNotificationsStatus,
-} from '../../controllers/notification-controller';
-import { loadScrollPagination } from '../../middleware/mongoose-middleware';
+} from '../../controllers/notification-controller.js';
+import { loadScrollPagination } from '../../middleware/mongoose-middleware.js';
 
 const notificationRouter = express.Router();
 

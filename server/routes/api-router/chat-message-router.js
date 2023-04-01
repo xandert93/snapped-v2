@@ -3,7 +3,7 @@ import {
   createMessage,
   deleteMessage,
   getChatMessages,
-} from '../../controllers/chat-message-controller';
+} from '../../controllers/chat-message-controller.js';
 
 const messageRouter = express.Router();
 

@@ -1,18 +1,18 @@
-export { default as User } from './User';
-export { default as UserAuthCode } from './UserAuthCode';
-export { default as UserFollower } from './UserFollower';
-export { default as UserFollowing } from './UserFollowing';
+export { default as User } from './User.js';
+export { default as UserAuthCode } from './UserAuthCode.js';
+export { default as UserFollower } from './UserFollower.js';
+export { default as UserFollowing } from './UserFollowing.js';
 
-export { default as Snap } from './Snap';
-export { default as SnapLike } from './SnapLike';
-export { default as SnapComment } from './SnapComment';
+export { default as Snap } from './Snap.js';
+export { default as SnapLike } from './SnapLike.js';
+export { default as SnapComment } from './SnapComment.js';
 
-export { default as Chat } from './Chat';
-export { default as ChatMessage } from './ChatMessage';
-export { default as Notification } from './Notification';
-// export { default as Message } from './Message';
+export { default as Chat } from './Chat.js';
+export { default as ChatMessage } from './ChatMessage.js';
+export { default as Notification } from './Notification.js';
+// export { default as Message } from './Message.js';
 
-export { default as Product } from './Product';
-export { default as ProductReview } from './ProductReview';
-export { default as Basket } from './Basket';
-export { default as Order } from './Order';
+export { default as Product } from './Product.js';
+export { default as ProductReview } from './ProductReview.js';
+export { default as Basket } from './Basket.js';
+export { default as Order } from './Order.js';

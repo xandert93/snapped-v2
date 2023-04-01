@@ -7,9 +7,12 @@ import {
   validateEmail,
   validateURL,
   checkUnreserved,
-} from '../utils/validators';
-import { toTitleCase } from '../utils/helpers';
-import { AuthError, BadReqError, NotFoundError } from '../utils/error-types';
+} from '../utils/validators.js';
+
+import { toTitleCase } from '../utils/helpers.js';
+
+import { AuthError, BadReqError, NotFoundError } from '../utils/error-types.js';
+
 import {
   UserFollower,
   UserFollowing,
@@ -18,8 +21,9 @@ import {
   Notification,
   Basket,
   ProductReview,
-} from '.';
-import { createCustomer } from '../utils/stripe-utils';
+} from '../models/index.js';
+
+import { createCustomer } from '../utils/stripe-utils.js';
 
 const profileSubSchema = new Schema(
   {

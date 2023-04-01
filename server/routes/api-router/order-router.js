@@ -1,8 +1,8 @@
 import express from 'express';
-import { getOrder, getOrders, getReqUsersOrders } from '../../controllers/order-controller';
-import { loadOrder } from '../../middleware/order-middleware';
-import { ensureIsReqUsers } from '../../middleware/auth-middleware';
-import { ensureIsObjectId } from '../../middleware/mongoose-middleware';
+import { getOrder, getOrders, getReqUsersOrders } from '../../controllers/order-controller.js';
+import { loadOrder } from '../../middleware/order-middleware.js';
+import { ensureIsReqUsers } from '../../middleware/auth-middleware.js';
+import { ensureIsObjectId } from '../../middleware/mongoose-middleware.js';
 
 const orderRouter = express.Router();
 

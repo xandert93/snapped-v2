@@ -1,5 +1,5 @@
 import genMulter from 'multer';
-import { BadReqError } from '../utils/error-types';
+import { BadReqError } from '../utils/error-types.js';
 
 const MIME_TYPES = {
   'image/png': 'png',
@@ -10,7 +10,7 @@ const MIME_TYPES = {
 const MAX_IMAGE_SIZE = 12 * 1024 * 1024; // 12MB
 
 export const multer = genMulter({
-  dest: 'server/temp/uploads', // using server's disk storage
+  dest: 'temp/uploads', // using server's disk storage
   fileFilter: (req, file, cb) => {
     const isPermitted = MIME_TYPES[file.mimetype];
 

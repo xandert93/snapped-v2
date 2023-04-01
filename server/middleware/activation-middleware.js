@@ -1,7 +1,7 @@
-import { User, UserAuthCode } from '../models';
-import { createAndSendEmail } from '../utils/nodemailer';
-import { genRandomString, genURLWithParams, getClientOrigin } from '../utils/helpers';
-import { ForbiddenError } from '../utils/error-types';
+import { User, UserAuthCode } from '../models/index.js';
+import { createAndSendEmail } from '../utils/nodemailer.js';
+import { genRandomString, genURLWithParams, getClientOrigin } from '../utils/helpers.js';
+import { ForbiddenError } from '../utils/error-types.js';
 
 //protected route
 export const sendActivationEmail = async (req, res) => {

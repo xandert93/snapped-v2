@@ -1,4 +1,4 @@
-import { cloudinary } from '../config';
+import { cloudinary } from '../config/index.js';
 
 export const upload = async (path, folder) => {
   const result = await cloudinary.uploader.upload(path, { folder });

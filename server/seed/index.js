@@ -1,4 +1,4 @@
-import { Product, User } from '../models';
+import { Product, User } from '../models/index.js';
 
 const dummyProducts = [
   {

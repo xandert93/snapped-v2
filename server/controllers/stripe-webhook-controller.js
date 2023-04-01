@@ -1,12 +1,12 @@
-import { Basket, Order, Product, User } from '../models';
-import { genCountryName } from '../utils/helpers';
+import { Basket, Order, Product, User } from '../models/index.js';
+import { genCountryName } from '../utils/helpers.js';
 import {
   genShippingNameAndDeliveryEst,
   getLineItems,
   getProductName,
   getShippingRate,
   trimLine_Items,
-} from '../utils/stripe-utils';
+} from '../utils/stripe-utils.js';
 
 // PRODUCTS
 export const createProduct = async (product) => {

@@ -1,12 +1,12 @@
 import express from 'express';
-import { ensureHasStock, loadUsersBasket } from '../../middleware/basket-middleware';
+import { ensureHasStock, loadUsersBasket } from '../../middleware/basket-middleware.js';
 import {
   addLineItemToUsersBasket,
   adjustBasketLineItemQuantity,
   clearUsersBasket,
   getUsersBasket,
   removeLineItemFromUsersBasket,
-} from '../../controllers/basket-controller';
+} from '../../controllers/basket-controller.js';
 
 const basketRouter = express.Router();
 

@@ -9,7 +9,7 @@ import {
   resetUserSubscription,
   updateProductPricing,
   createOrder,
-} from '../controllers/stripe-webhook-controller';
+} from '../controllers/stripe-webhook-controller.js';
 
 export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 

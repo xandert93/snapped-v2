@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken';
 import axios from 'axios';
 import GoogleAuth from 'google-auth-library';
-import { AuthError } from './error-types';
-import { cld } from '.';
+import { AuthError } from './error-types.js';
+import { cld } from '../utils/index.js';
 
 const {
   NODE_ENV,

@@ -1,5 +1,5 @@
-import { ProductReview } from '../models';
-import { toObjectId } from '../utils/mongoose-utils';
+import { ProductReview } from '../models/index.js';
+import { toObjectId } from '../utils/mongoose-utils.js';
 
 export const createProductReview = async (req, res) => {
   const { userId, product, tokenUser } = req;

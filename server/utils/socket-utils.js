@@ -1,5 +1,5 @@
-import { getIO } from '../config';
-import { UserFollower } from '../models';
+import { getIO } from '../config/index.js';
+import { UserFollower } from '../models/index.js';
 
 export const emitNewNotification = (notification) => {
   const { recipientId } = notification;

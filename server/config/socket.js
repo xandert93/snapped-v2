@@ -1,5 +1,5 @@
 import { Server as SocketServer } from 'socket.io';
-import { verifyAccessToken } from '../utils/auth-utils';
+import { verifyAccessToken } from '../utils/auth-utils.js';
 
 const log = (str) => console.log('⚡️ Socket Server: ' + str);
 

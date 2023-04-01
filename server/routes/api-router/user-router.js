@@ -15,12 +15,12 @@ import {
   getProfileSnapshot,
   getUserFollowers,
   getUserFollowing,
-} from '../../controllers/user-controller';
-import { loadReqUser, loadUser } from '../../middleware/user-middleware';
+} from '../../controllers/user-controller.js';
+import { loadReqUser, loadUser } from '../../middleware/user-middleware.js';
 
-import { uploadImage } from '../../middleware/cloudinary-middleware';
-import { handleFileUpload } from '../../middleware/multer-middleware';
-import { ensureIsObjectId, loadScrollPagination } from '../../middleware/mongoose-middleware';
+import { uploadImage } from '../../middleware/cloudinary-middleware.js';
+import { handleFileUpload } from '../../middleware/multer-middleware.js';
+import { ensureIsObjectId, loadScrollPagination } from '../../middleware/mongoose-middleware.js';
 
 const userRouter = express.Router();
 

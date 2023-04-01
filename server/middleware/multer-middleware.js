@@ -1,4 +1,4 @@
-import { multer } from '../config';
+import { multer } from '../config/index.js';
 
 export const handleFileUpload = (fieldName) => multer.single(fieldName);
 

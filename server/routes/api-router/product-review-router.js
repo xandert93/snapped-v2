@@ -4,15 +4,15 @@ import {
   deleteProductReview,
   getProductReviews,
   updateProductReview,
-} from '../../controllers/product-review-controller';
-import { ensureIsReqUsers } from '../../middleware/auth-middleware';
+} from '../../controllers/product-review-controller.js';
+import { ensureIsReqUsers } from '../../middleware/auth-middleware.js';
 
-import { ensureIsObjectId, loadPagination } from '../../middleware/mongoose-middleware';
+import { ensureIsObjectId, loadPagination } from '../../middleware/mongoose-middleware.js';
 import {
   ensureIsPurchased,
   loadProduct,
   loadProductReview,
-} from '../../middleware/product-middleware';
+} from '../../middleware/product-middleware.js';
 
 const reviewRouter = express.Router();
 

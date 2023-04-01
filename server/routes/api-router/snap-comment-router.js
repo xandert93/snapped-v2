@@ -4,11 +4,11 @@ import {
   createSnapComment,
   deleteSnapComment,
   updateSnapComment,
-} from '../../controllers/snap-comment-controller';
+} from '../../controllers/snap-comment-controller.js';
 
-import { loadSnap, loadSnapComment } from '../../middleware/snap-middleware';
-import { ensureIsObjectId, loadScrollPagination } from '../../middleware/mongoose-middleware';
-import { ensureIsReqUsers } from '../../middleware/auth-middleware';
+import { loadSnap, loadSnapComment } from '../../middleware/snap-middleware.js';
+import { ensureIsObjectId, loadScrollPagination } from '../../middleware/mongoose-middleware.js';
+import { ensureIsReqUsers } from '../../middleware/auth-middleware.js';
 
 const commentRouter = express.Router();
 

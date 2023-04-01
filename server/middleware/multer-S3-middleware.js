@@ -1,4 +1,4 @@
-import { s3Multer } from '../config';
+import { s3Multer } from '../config/index.js';
 
 export const uploadFile = (fieldName) => s3Multer.single(fieldName); //<input:file />
 

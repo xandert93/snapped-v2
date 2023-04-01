@@ -1,6 +1,6 @@
-import { Notification } from '../models';
+import { Notification } from '../models/index.js';
 
-import { toObjectId } from '../utils/mongoose-utils';
+import { toObjectId } from '../utils/mongoose-utils.js';
 
 export const getReqUserUnseenNotificationCount = async (req, res) => {
   const { userId } = req;

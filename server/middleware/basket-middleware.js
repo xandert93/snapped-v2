@@ -1,5 +1,5 @@
-import { Basket, Product } from '../models';
-import { ForbiddenError } from '../utils/error-types';
+import { Basket, Product } from '../models/index.js';
+import { ForbiddenError } from '../utils/error-types.js';
 
 export const loadUsersBasket = async (req, res, next) => {
   const { userId } = req;

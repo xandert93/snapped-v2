@@ -1,1 +1,1 @@
-export * as cld from './cloudinary-utils';
+export * as cld from './cloudinary-utils.js';

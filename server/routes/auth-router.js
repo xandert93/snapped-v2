@@ -1,11 +1,11 @@
 import express from 'express';
-import { ensureUnverified, sendActivationEmail } from '../middleware/activation-middleware';
-import { ensureAuth, ensureIsHuman } from '../middleware/auth-middleware';
+import { ensureUnverified, sendActivationEmail } from '../middleware/activation-middleware.js';
+import { ensureAuth, ensureIsHuman } from '../middleware/auth-middleware.js';
 import {
   rateLimitPasswordReset,
   verifyPasswordResetCredentials,
-} from '../middleware/password-reset-middleware';
-import { activateAccount } from '../controllers/activation-controller';
+} from '../middleware/password-reset-middleware.js';
+import { activateAccount } from '../controllers/activation-controller.js';
 
 import {
   checkEmailOrUsername,
@@ -16,9 +16,9 @@ import {
   reauthorise,
   logout,
   reauthenticate,
-} from '../controllers/auth-controller';
+} from '../controllers/auth-controller.js';
 
-import { resetPassword, sendPasswordResetEmail } from '../controllers/password-reset-controller';
+import { resetPassword, sendPasswordResetEmail } from '../controllers/password-reset-controller.js';
 
 const authRouter = express.Router();
 
@@ -38,4 +38,4 @@ authRouter.post('/password-reset/request-email', rateLimitPasswordReset, sendPas
 authRouter.post('/password-reset/verify', verifyPasswordResetCredentials);
 authRouter.patch('/password-reset/reset', verifyPasswordResetCredentials, resetPassword);
 
-export default authRouter;
+export { authRouter };

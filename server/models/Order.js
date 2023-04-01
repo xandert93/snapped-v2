@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
-import Basket from './Basket';
-import Product from './Product';
+import Basket from './Basket.js';
+import Product from './Product.js';
 
 const addressSubSchema = new Schema(
   {

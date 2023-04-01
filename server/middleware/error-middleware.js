@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { RequestError } from '../utils/error-types';
+import { RequestError } from '../utils/error-types.js';
 
 export const clientErrorResponder = (err, req, res, next) => {
   const { statusCode, name, message } = err;

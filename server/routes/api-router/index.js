@@ -1,18 +1,18 @@
 import express from 'express';
 
-import { ensureAuth } from '../../middleware/auth-middleware';
+import { ensureAuth } from '../../middleware/auth-middleware.js';
 
-import userRouter from './user-router';
-import snapRouter from './snap-router';
-import snapCommentRouter from './snap-comment-router';
-import chatRouter from './chat-router';
-import chatMessageRouter from './chat-message-router';
-import notificationRouter from './notification-router';
-// import subscriptionRouter from './subscription-router';
-import productRouter from './product-router';
-import productReviewRouter from './product-review-router';
-import basketRouter from './basket-router';
-import orderRouter from './order-router';
+import userRouter from './user-router.js';
+import snapRouter from './snap-router.js';
+import snapCommentRouter from './snap-comment-router.js';
+import chatRouter from './chat-router.js';
+import chatMessageRouter from './chat-message-router.js';
+import notificationRouter from './notification-router.js';
+// import subscriptionRouter from './subscription-router.js';
+import productRouter from './product-router.js';
+import productReviewRouter from './product-review-router.js';
+import basketRouter from './basket-router.js';
+import orderRouter from './order-router.js';
 
 const apiRouter = express.Router();
 
@@ -32,4 +32,4 @@ apiRouter.use('/product-reviews', productReviewRouter);
 apiRouter.use('/baskets', basketRouter);
 apiRouter.use('/orders', orderRouter);
 
-export default apiRouter;
+export { apiRouter };

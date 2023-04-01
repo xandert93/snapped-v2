@@ -1,9 +1,9 @@
-import { User, UserFollower, UserFollowing, Notification } from '../models';
-import { toObjectId } from '../utils/mongoose-utils';
+import { User, UserFollower, UserFollowing, Notification } from '../models/index.js';
+import { toObjectId } from '../utils/mongoose-utils.js';
 
-import { BadReqError, NotFoundError } from '../utils/error-types';
-import { emitNewNotification, emitNotificationUndone } from '../utils/socket-utils';
-import { genTokens, setRefreshCookie } from '../utils/auth-utils';
+import { BadReqError, NotFoundError } from '../utils/error-types.js';
+import { emitNewNotification, emitNotificationUndone } from '../utils/socket-utils.js';
+import { genTokens, setRefreshCookie } from '../utils/auth-utils.js';
 
 //GET @ '/username/:username'
 export const getProfileUser = async (req, res) => {

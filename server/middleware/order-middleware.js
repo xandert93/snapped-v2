@@ -1,5 +1,5 @@
-import { Order } from '../models';
-import { NotFoundError } from '../utils/error-types';
+import { Order } from '../models/index.js';
+import { NotFoundError } from '../utils/error-types.js';
 
 export const loadOrder = async (req, res, next) => {
   const { id } = req.params;
