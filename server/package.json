@@ -6,7 +6,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "devStart": "nodemon -r dotenv/config index.js",
+    "start:dev": "cross-env NODE_ENV='development' nodemon -r dotenv/config index.js",
+    "start:prod": "cross-env NODE_ENV='production' nodemon -r dotenv/config index.js",
     "start": "node index.js",
     "devStripe": "stripe listen --load-from-webhooks-api --forward-to localhost:5000"
   },

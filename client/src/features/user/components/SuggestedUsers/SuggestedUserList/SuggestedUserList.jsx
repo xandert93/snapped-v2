@@ -8,7 +8,7 @@ export const SuggestedUserList = ({ users }) => {
     <Fade in timeout={800}>
       <Box>
         <CardHeader
-          title="Suggested for You 🤝"
+          title="Suggested for you 🤝"
           titleTypographyProps={{ variant: 'h6', component: 'h2', style: { fontWeight: 'bold' } }}
         />
         <Box>

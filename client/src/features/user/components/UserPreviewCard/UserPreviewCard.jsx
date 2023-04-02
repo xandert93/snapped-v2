@@ -47,6 +47,7 @@ export const UserPreviewCard = ({
         component: ProfileLink,
         id: userId,
         username,
+        onClick: (e) => e.stopPropagation(), // so handleClick doesn't fire too, resulting in 2x push
       }}
       subheader={fullName}
       subheaderTypographyProps={{ variant: 'body2', noWrap: true }}

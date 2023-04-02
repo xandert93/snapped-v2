@@ -4,8 +4,7 @@
   "description": "Full Stack Social Media Application",
   "main": "./server/index.js",
   "scripts": {
-    "client": "npm run start --prefix client",
-    "start": "npm run start --prefix server"
+    "start": "cd server && npm start"
   },
   "repository": {
     "type": "git",
