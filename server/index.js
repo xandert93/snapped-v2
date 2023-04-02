@@ -54,7 +54,7 @@ if (inProduction) {
 
   app.use(compression());
   app.use(express.static(buildDir));
-  app.get('*', (req, res) => res.sendFile('index.html', { root: buildDir }));
+  app.use((req, res) => res.sendFile('index.html', { root: buildDir }));
 }
 
 const server = app.listen(PORT, () =>
