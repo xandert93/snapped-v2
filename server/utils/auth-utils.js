@@ -88,6 +88,9 @@ export const genGoogleUser = async (data) => {
 //Facebook OAuth
 export function verifyFacebookInputToken(inputToken) {
   //input_token is user's FE access token issued by FB & access_token is our App ID + App Secret. Request below decodes the user's access token
+
+  console.log({ FACEBOOK_APP_ID, FACEBOOK_APP_SECRET });
+
   return axios({
     url: 'https://graph.facebook.com/debug_token',
     params: { input_token: inputToken, access_token: FACEBOOK_APP_ID + '|' + FACEBOOK_APP_SECRET },
