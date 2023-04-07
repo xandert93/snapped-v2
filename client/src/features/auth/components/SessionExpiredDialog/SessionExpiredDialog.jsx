@@ -5,7 +5,7 @@ import { DialogHeader, DialogTitle } from '../../../../components/Dialog';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../state/auth-actions';
 
-export const SessionExpiredDialogContent = (props) => {
+export const SessionExpiredDialog = (props) => {
   // const classes = useStyles();
   const dispatch = useDispatch();
 

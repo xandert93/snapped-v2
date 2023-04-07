@@ -23,7 +23,7 @@ import {
 } from './middleware/error-middleware.js';
 
 const dirName = path.dirname(url.fileURLToPath(import.meta.url));
-const { NODE_ENV, HOST, PORT } = process.env;
+const { NODE_ENV, PORT } = process.env;
 const inProduction = NODE_ENV === 'production';
 
 await connectDB();
@@ -58,7 +58,7 @@ if (inProduction) {
 }
 
 const server = app.listen(PORT, () =>
-  console.log(`♨️  Express Server: running! (${NODE_ENV} on ${HOST}:${PORT})`)
+  console.log(`♨️  Express Server: running! (${NODE_ENV} on:${PORT})`)
 );
 
 initSocketServer(server);

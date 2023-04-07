@@ -1,12 +1,12 @@
 import { useDispatch } from 'react-redux';
 import { DialogContentText } from '@material-ui/core';
-import { BsCloudUploadFill as UploadIcon } from 'react-icons/bs';
+import { BsCloudUploadFill as DropIcon } from 'react-icons/bs';
 import { FaFolderOpen as OpenFolderIcon } from 'react-icons/fa';
 
 import { useToggle } from '../../../../hooks';
 
 import useStyles from './styles';
-import { handleFileSelection } from '../../state';
+import { handleSnapFileSelection } from '../../state';
 import { CenteredGrid } from '../../../../components';
 
 export const SnapCreateDropzone = () => {
@@ -15,11 +15,10 @@ export const SnapCreateDropzone = () => {
 
   const handleDropzoneDrop = async (e) => {
     e.preventDefault(); // prevents opening of file in new tab
-
-    dispatch(handleFileSelection(e.dataTransfer.files));
+    dispatch(handleSnapFileSelection(e.dataTransfer.files));
   };
 
-  const handleDragEvents = (e) => {
+  const handleDragEvent = (e) => {
     e.currentTarget === e.target && !e.currentTarget.contains(e.relatedTarget) && toggleIsDragged();
   };
 
@@ -28,19 +27,16 @@ export const SnapCreateDropzone = () => {
     <CenteredGrid
       direction="column"
       className={classes['dropzone']}
-      onDragEnter={handleDragEvents}
-      onDragLeave={handleDragEvents}
+      onDragEnter={handleDragEvent}
+      onDragLeave={handleDragEvent}
       onDrop={handleDropzoneDrop}>
       <DialogContentText />
       <DialogContentText
         className={classes['dropzone-icon']}
         variant="h1"
-        component={!isDragged ? OpenFolderIcon : UploadIcon}
+        component={!isDragged ? OpenFolderIcon : DropIcon}
       />
-      <DialogContentText
-        variant="p"
-        children={!isDragged ? 'Drag your images here...' : '...and drop them!'}
-      />
+      <DialogContentText children={!isDragged ? 'Drag your images here...' : '...and drop them!'} />
     </CenteredGrid>
   );
 };

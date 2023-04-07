@@ -5,10 +5,12 @@ import { Box, DialogActions, DialogContent, DialogContentText } from '@material-
 import { DialogCloseButton } from '../../../ui/components';
 import { selectAuthUserProfile } from '../../state/user-selectors';
 
-import { ProfileFormSubmitButton } from '../ProfileFormSubmitButton';
 import { ProfileForm } from '../ProfileForm/ProfileForm';
+import { selectIsRequesting } from '../../../ui/state/ui-selectors';
+import { LoadingButton } from '../../../../components';
+import { isEqual as areEqual } from 'lodash';
 
-export const ProfileFormDialogContent = () => {
+export const ProfileFormDialog = () => {
   const initialDetails = useSelector(selectAuthUserProfile);
   const [details, setDetails] = useState(initialDetails);
 
@@ -25,5 +27,23 @@ export const ProfileFormDialogContent = () => {
         <ProfileFormSubmitButton details={details} />
       </DialogActions>
     </>
+  );
+};
+
+export const ProfileFormSubmitButton = ({ details }) => {
+  const currentDetails = useSelector(selectAuthUserProfile);
+
+  const isClean = areEqual(currentDetails, details);
+  const isRequesting = useSelector(selectIsRequesting);
+
+  return (
+    <LoadingButton
+      type="submit"
+      form="profile-form"
+      isLoading={isRequesting}
+      disabled={isClean || isRequesting}
+      color="secondary"
+      children="Save"
+    />
   );
 };

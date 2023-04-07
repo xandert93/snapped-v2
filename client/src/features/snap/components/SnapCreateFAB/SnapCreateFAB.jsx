@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { ImageFileInput, Icon, CameraIcon } from '../../../../components';
 
-import { selectIsSnapPosting, handleFileSelection } from '../../state';
+import { selectIsSnapPosting, handleSnapFileSelection } from '../../state';
 import { ScrollableFAB } from '../../../ui/components';
 
 import useStyles from './styles';
@@ -10,7 +10,7 @@ import useStyles from './styles';
 export const SnapCreateFAB = () => {
   const dispatch = useDispatch();
 
-  const handleFileChange = (e) => dispatch(handleFileSelection(e.target.files));
+  const handleFileChange = (e) => dispatch(handleSnapFileSelection(e.target.files));
 
   const isPosting = useSelector(selectIsSnapPosting);
 

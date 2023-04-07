@@ -18,12 +18,12 @@ export { SnapCreateFAB } from './SnapCreateFAB';
 export { SnapMoreAction } from './SnapMoreAction';
 export { SnapCreateForm } from './SnapCreateForm';
 export { SnapUpdateForm } from './SnapUpdateForm';
-export { SnapFormDialogContent } from './SnapFormDialogContent';
-export { SnapDialogContent } from './SnapDialogContent';
-export { SnapLikesDialogContent } from './SnapLikesDialogContent';
+export { SnapFormDialog } from './SnapFormDialog';
+export { SnapDialog } from './SnapDialog';
+export { SnapLikesDialog } from './SnapLikesDialog';
 
+export { SnapCreateMain } from './SnapCreateMain';
 export { SnapCreateDNDDialog } from './SnapCreateDNDDialog';
-export { SnapCreateDNDDialogContent } from './SnapCreateDNDDialogContent';
 export { SnapCreateDropzone } from './SnapCreateDropzone';
 
 export { SocketSnapsButton } from './SocketSnapsButton';

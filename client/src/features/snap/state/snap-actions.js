@@ -25,7 +25,7 @@ export const fetchSnaps = createAsyncThunk('snap/fetchSnaps', async (config, { g
 
 const MAX_IMAGE_COUNT = 5;
 
-export const handleFileSelection = (fileList) => async (dispatch, getState) => {
+export const handleSnapFileSelection = (fileList) => async (dispatch, getState) => {
   const files = [...fileList]; // => Array (that we can map over)
 
   if (files.length > MAX_IMAGE_COUNT) {
@@ -35,7 +35,7 @@ export const handleFileSelection = (fileList) => async (dispatch, getState) => {
   // 1
 
   const previewURLPromises = files.map((file) => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const reader = new FileReader();
       reader.onload = (e) => resolve(e.target.result);
 

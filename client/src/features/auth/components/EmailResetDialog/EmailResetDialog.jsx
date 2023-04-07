@@ -19,7 +19,7 @@ import { DialogHeader, DialogTitle } from '../../../../components';
 import { selectAuthUserEmail } from '../../../user/state/user-selectors';
 import { DialogCloseButton } from '../../../ui/components';
 
-export const EmailResetDialogContent = () => {
+export const EmailResetDialog = () => {
   const dispatch = useDispatch();
 
   const email = useSelector(selectAuthUserEmail);

@@ -23,8 +23,8 @@ export { RegistrationEmailForm } from './RegistrationEmailForm';
 export { RegistrationUsernameForm } from './RegistrationUsernameForm';
 export { RegistrationCheckboxList } from './RegistrationCheckboxList';
 
-export { ActivationDialogContent } from './ActivationDialogContent';
-export { EmailResetDialogContent } from './EmailResetDialogContent';
-export { SessionExpiredDialogContent } from './SessionExpiredDialogContent';
+export { ActivationDialog } from './ActivationDialog';
+export { EmailResetDialog } from './EmailResetDialog';
+export { SessionExpiredDialog } from './SessionExpiredDialog';
 
 export { ProtectedRoute, PublicRoute } from './Routes';

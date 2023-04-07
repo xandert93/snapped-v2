@@ -5,9 +5,9 @@ import { selectAuthUserFirstName } from '../../state/user-selectors';
 import { UploadAvatar } from '..';
 import { CenteredGrid, DialogHeader, DialogTitle } from '../../../../components';
 
-import { ProfileFormDialogContent } from '../ProfileFormDialogContent';
+import { ProfileFormDialog } from '../ProfileFormDialog';
 
-export const WelcomeDialogContent = () => {
+export const WelcomeDialog = () => {
   const firstName = useSelector(selectAuthUserFirstName);
 
   return (
@@ -22,7 +22,7 @@ export const WelcomeDialogContent = () => {
         </CenteredGrid>
       </DialogContent>
 
-      <ProfileFormDialogContent />
+      <ProfileFormDialog />
     </>
   );
 };

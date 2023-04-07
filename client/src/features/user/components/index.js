@@ -19,9 +19,10 @@ export { ProfileUserSnapPreviewTabs } from './ProfileUserSnapPreviewTabs';
 export { ProfileSnapGrid } from './ProfileSnapGrid';
 export { ProfileUserSnapGrid } from './ProfileUserSnapGrid';
 export { ProfileForm } from './ProfileForm';
-export { ProfileFormSubmitButton } from './ProfileFormSubmitButton';
-export { WelcomeDialogContent } from './WelcomeDialogContent';
+export { ProfileFormDialog } from './ProfileFormDialog';
+export { WelcomeDialog } from './WelcomeDialog';
 
 export { SuggestedUsers } from './SuggestedUsers';
 export { HomeWelcome } from './HomeWelcome';
+export { HomeContent } from './HomeContent';
 export { HomeSuggestedUsersCard } from './HomeSuggestedUsersCard';

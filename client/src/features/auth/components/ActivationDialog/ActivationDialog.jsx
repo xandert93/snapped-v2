@@ -5,14 +5,14 @@ import { Close as CloseIcon, Email as EmailIcon, Refresh } from '@material-ui/ic
 
 import useStyles from './styles';
 
-import { rerequestActivationEmail } from '../../../../features/auth/state/auth-actions';
+import { rerequestActivationEmail } from '../../state/auth-actions';
 import { openDialog } from '../../../ui/state/ui-slice';
 import { DIALOGS } from '../../../../constants/modal-constants';
 import { DialogHeader, DialogTitle, Link, LinkButton } from '../../../../components';
 import { ConnectedLoadingButton, DialogCloseButton } from '../../../ui/components';
 import { selectAuthUserEmail, selectAuthUserFirstName } from '../../../user/state/user-selectors';
 
-export const ActivationDialogContent = () => {
+export const ActivationDialog = () => {
   const email = useSelector(selectAuthUserEmail);
   const firstName = useSelector(selectAuthUserFirstName);
 

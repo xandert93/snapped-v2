@@ -1,5 +1,7 @@
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Dialog, Grow } from '@material-ui/core';
+import { Dialog, Grow, useMediaQuery } from '@material-ui/core';
 import { CloudUploadRounded as UploadIcon, CheckRounded as CheckIcon } from '@material-ui/icons';
 
 import { selectDialogId, selectIsDialogOpen, selectIsRequesting } from '../../state/ui-selectors';
@@ -7,29 +9,22 @@ import { closeDialog } from '../../state/ui-slice';
 
 import { DIALOGS } from '../../../../constants/modal-constants';
 
-import {
-  ActivationDialogContent,
-  EmailResetDialogContent,
-  SessionExpiredDialogContent,
-} from '../../../auth/components';
+import { ActivationDialog, EmailResetDialog, SessionExpiredDialog } from '../../../auth/components';
 
-import { isVPMaxSm, isVPMinSm, isVPXs } from '../../../../theme/media-queries';
+import { isVPXs } from '../../../../theme/media-queries';
 import useStyles from './styles';
 
 import {
   SnapCreateForm,
-  SnapDialogContent,
+  SnapDialog,
   SnapUpdateForm,
-  SnapFormDialogContent,
-  SnapLikesDialogContent,
-  SnapCreateDNDDialogContent,
+  SnapFormDialog,
+  SnapLikesDialog,
+  SnapCreateDNDDialog,
 } from '../../../snap/components';
 import { SlideDown, SlideLeft } from '../../../../components';
-import { WelcomeDialogContent } from '../../../user/components';
-import { useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
-import { ProfileFormDialogContent } from '../../../user/components/ProfileFormDialogContent';
-import { useMediaQueries } from '../../../../hooks';
+import { WelcomeDialog, ProfileFormDialog } from '../../../user/components';
+
 import { NotificationMenu } from '../../../notification/components';
 import { markNotificationsAsSeen } from '../../../notification/state/notification-slice';
 
@@ -58,7 +53,7 @@ export const DialogManager = () => {
     if (isOpen) dispatch(closeDialog()); // in case modal is open when the page changes e.g. after clicking a <Link> within the modal
   }, [location]);
 
-  const [isXs] = useMediaQueries(isVPXs);
+  const isXs = useMediaQuery(isVPXs);
 
   const isRequesting = useSelector(selectIsRequesting);
 
@@ -82,8 +77,7 @@ export const DialogManager = () => {
         className: classes['activation-dialog'],
         fullWidth: true, // takes full width of breakpoint specified by "maxWidth" prop
         TransitionComponent: Grow,
-        children:
-          DIALOG_ID === ACTIVATION ? <ActivationDialogContent /> : <EmailResetDialogContent />,
+        children: DIALOG_ID === ACTIVATION ? <ActivationDialog /> : <EmailResetDialog />,
         ...(DIALOG_ID === EMAIL_RESET && { onClose: null }),
       };
       break;
@@ -91,13 +85,13 @@ export const DialogManager = () => {
     case WELCOME:
       props = {
         ...responsiveProps,
-        children: <WelcomeDialogContent />,
+        children: <WelcomeDialog />,
       };
       break;
     case PROFILE_UPDATE:
       props = {
         ...responsiveProps,
-        children: <ProfileFormDialogContent />,
+        children: <ProfileFormDialog />,
       };
       break;
 
@@ -107,7 +101,7 @@ export const DialogManager = () => {
         fullWidth: false,
         fullScreen: isXs,
         TransitionComponent: !isXs ? SlideDown : SlideLeft,
-        children: <SnapDialogContent />,
+        children: <SnapDialog />,
       };
       break;
 
@@ -117,27 +111,27 @@ export const DialogManager = () => {
         fullScreen: isXs,
         TransitionComponent: !isXs ? SlideDown : SlideLeft,
         classes: { paper: classes['snap-likes-dialog-paper'] },
-        children: <SnapLikesDialogContent />,
+        children: <SnapLikesDialog />,
       };
       break;
 
-    // case SNAP_CREATE_DND:
-    //   props = {
-    //     children: <SnapCreateDNDDialogContent />,
-    //     onDragOver: (e) => e.preventDefault(), //enable root <div> as a dropzone, so that contingency "onDrop" below can run
-    //     onDragLeave: (e) => !e.relatedTarget && dispatch(closeDialog()),
-    //     onDrop: (e) => {
-    //       e.preventDefault(); //prevents opening of file in new tab
-    //       dispatch(closeDialog());
-    //     },
-    //   };
-    //   break;
+    case SNAP_CREATE_DND:
+      props = {
+        children: <SnapCreateDNDDialog />,
+        onDragOver: (e) => e.preventDefault(), //enable root <div> as a dropzone, so that contingency "onDrop" below can run
+        onDragLeave: (e) => !e.relatedTarget && dispatch(closeDialog()),
+        onDrop: (e) => {
+          e.preventDefault(); //prevents opening of file in new tab
+          dispatch(closeDialog());
+        },
+      };
+      break;
 
     case SNAP_CREATE:
       props = {
         ...responsiveProps,
         children: (
-          <SnapFormDialogContent
+          <SnapFormDialog
             FormComponent={SnapCreateForm}
             title="Create Your Snap!"
             SubmitIcon={UploadIcon}
@@ -150,7 +144,7 @@ export const DialogManager = () => {
       props = {
         ...responsiveProps,
         children: (
-          <SnapFormDialogContent
+          <SnapFormDialog
             FormComponent={SnapUpdateForm}
             title="Edit Your Snap!"
             SubmitIcon={CheckIcon}
@@ -173,7 +167,7 @@ export const DialogManager = () => {
 
     case SESSION_EXPIRED:
       props = {
-        children: <SessionExpiredDialogContent />,
+        children: <SessionExpiredDialog />,
       };
       break;
   }

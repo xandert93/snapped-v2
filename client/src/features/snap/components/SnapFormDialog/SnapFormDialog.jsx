@@ -9,7 +9,7 @@ import { AsyncIconButton, DialogCloseButton } from '../../../ui/components';
 
 import useStyles from './styles';
 
-export const SnapFormDialogContent = ({ FormComponent, title, SubmitIcon }) => {
+export const SnapFormDialog = ({ FormComponent, title, SubmitIcon }) => {
   const isXs = useMediaQuery(isVPXs);
 
   const [hasErr, setHasErr] = useState(false);

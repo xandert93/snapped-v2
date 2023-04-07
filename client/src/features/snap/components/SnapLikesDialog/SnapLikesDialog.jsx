@@ -15,7 +15,7 @@ import {
 } from '../../../../components';
 
 //*** basically all copied from <ProfileRelationDialog>
-export const SnapLikesDialogContent = () => {
+export const SnapLikesDialog = () => {
   const snapId = useSelector(selectSelectedSnapId);
 
   const [hasMore, setHasMore] = useState(false);

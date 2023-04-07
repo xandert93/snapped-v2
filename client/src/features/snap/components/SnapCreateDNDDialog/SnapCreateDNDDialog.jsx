@@ -1,29 +1,26 @@
-import { Dialog } from '@material-ui/core';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectDialogId, selectIsDialogOpen } from '../../../ui/state/ui-selectors';
-import { closeDialog } from '../../../ui/state/ui-slice';
+import { DialogContent, DialogContentText, Typography } from '@material-ui/core';
+import { CenteredGrid } from '../../../../components';
+import { SnapCreateDropzone } from '../SnapCreateDropzone';
 
-import { DIALOGS } from '../../../../constants/modal-constants';
-import { SnapCreateDNDDialogContent } from '../SnapCreateDNDDialogContent';
+import useStyles from './styles';
 
 export const SnapCreateDNDDialog = () => {
-  const dispatch = useDispatch();
-  const isOpen = useSelector(selectIsDialogOpen);
-  const dialogId = useSelector(selectDialogId);
-
-  const handleClose = () => dispatch(closeDialog());
+  const classes = useStyles();
 
   return (
-    <Dialog
-      open={isOpen && dialogId === DIALOGS.SNAP_CREATE_DND} //*** this is all quite clunky
-      onDragOver={(e) => e.preventDefault()} // enable root <div> as a dropzone, so that contingency "onDrop" below can run
-      onDragLeave={(e) => !e.relatedTarget && handleClose()}
-      onDrop={(e) => {
-        e.preventDefault(); // prevents opening of file in new tab
-        handleClose();
-      }}
-      onClose={handleClose}
-      children={<SnapCreateDNDDialogContent />}
-    />
+    <DialogContent className={classes['dnd']}>
+      <CenteredGrid direction="column">
+        <Typography
+          className={classes['dnd-title']}
+          variant="h4"
+          component="h2"
+          children="Create a Snap!"
+        />
+        <DialogContentText variant="caption" children="Media should be .jpeg, .png, .gif" />
+        <SnapCreateDropzone />
+      </CenteredGrid>
+    </DialogContent>
   );
 };
+
+//used raw <Typography> because <DialogContentText> comes with 12px margin bottom, which I didn't want

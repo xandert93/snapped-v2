@@ -13,7 +13,7 @@ export {
 
 export {
   fetchSnaps,
-  handleFileSelection,
+  handleSnapFileSelection,
   createSnap,
   updateSnap,
   toggleSnapLike,

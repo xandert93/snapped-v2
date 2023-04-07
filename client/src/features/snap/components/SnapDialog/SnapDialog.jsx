@@ -5,7 +5,7 @@ import { SnapDialogCard, SnapDialogMedia } from '../../components';
 import useStyles from './styles';
 import { isVPMinMd } from '../../../../theme/media-queries';
 
-export const SnapDialogContent = () => {
+export const SnapDialog = () => {
   const classes = useStyles();
   const isMinMd = useMediaQuery(isVPMinMd);
 
