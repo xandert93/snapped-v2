@@ -103,7 +103,7 @@ const paths = {
     maxLength: [20, 'Your username can be no longer than 20 characters'],
     validate: [
       { validator: validateUsername, message: 'Your username cannot contain special characters' },
-      { validator: checkUnreserved, message: ({ path, value }) => 'Your username is forbidden' },
+      { validator: checkUnreserved, message: ({ path, value }) => 'That username is forbidden' },
     ],
     unique: true,
   },

@@ -11,6 +11,7 @@ export const PATHS = {
   EXPLORE: '/explore',
   SNAP: '/snap/:id', //IG
   SEARCH: '/search', //query string is a separate entity from "pathname", so "/search" still matches irrespective of the query string
+  SUBSCRIPTION: '/subscription',
   ACCOUNT: '/account',
   MESSAGES: '/messages', //FB, Twitter
   NOT_FOUND: '/404',

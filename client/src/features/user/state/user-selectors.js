@@ -71,6 +71,7 @@ export const selectAuthUserSnapCount = (state) => state.users.auth.snapCount;
 export const selectAuthUserFollowCount = (state) => state.users.auth.followCount;
 
 export const selectAuthUserSubscription = (state) => state.users.auth.subscription;
+export const selectAuthUserSubscriptionName = (state) => state.users.auth.subscription.name;
 
 // Derived User or Auth selectors:
 export const selectUserInitials = (type) =>
@@ -79,6 +80,8 @@ export const selectUserInitials = (type) =>
     selectUserLastName(type),
     (firstName, lastName) => firstName[0] + lastName[0]
   );
+
+export const selectIsAuthUserSubscriber = createSelector(selectAuthUserSubscriptionName, Boolean);
 
 // Profile User Selectors
 export const selectProfileUserId = (state) => state.users.profile._id;

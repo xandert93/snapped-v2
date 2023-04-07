@@ -15,6 +15,7 @@ import { ThemeSwitch } from '../ThemeSwitch';
 import {
   selectAuthUserIsVerified,
   selectAuthUserUsername,
+  selectIsAuthUserSubscriber,
 } from '../../../user/state/user-selectors';
 
 import {
@@ -24,23 +25,38 @@ import {
   SunIcon,
   SecurityIcon,
   ContactIcon,
+  SubscriptionIcon,
+  Icon,
 } from '../../../../components';
 import { genProfilePath } from '../../../../utils/routing-utils';
 
-import useStyles from './styles';
 import { PATHS } from '../../../../constants/routing-constants';
+
+import clsx from 'clsx';
+
+import useStyles from './styles';
 
 export const NavigationAccountList = () => {
   const dispatch = useDispatch();
 
   const isVerified = useSelector(selectAuthUserIsVerified);
+  const isSubscriber = useSelector(selectIsAuthUserSubscriber);
+
+  const classes = useStyles();
 
   const items = {
     ...(!isVerified && {
       activation: {
-        Icon: () => <SecurityIcon color="primary" />,
-        props: { onClick: () => dispatch(openDialog(DIALOGS.ACTIVATION)) },
-        contentProps: { primary: 'Activate Account' },
+        props: {
+          onClick: () => dispatch(openDialog(DIALOGS.ACTIVATION)),
+        },
+        iconProps: {
+          component: SecurityIcon,
+          color: 'primary',
+        },
+        contentProps: {
+          primary: 'Activate Account',
+        },
       },
     }),
 
@@ -51,38 +67,61 @@ export const NavigationAccountList = () => {
     },
 
     theme: {
-      Icon: SunIcon,
       props: {
         onClick: (e) => e.stopPropagation(), // 1
         button: false,
+      },
+      iconProps: {
+        component: SunIcon,
       },
       contentProps: {
         primary: <ThemeSwitch />,
       },
     },
 
+    subscription: {
+      className: clsx(!isSubscriber && classes['snapped-premium-link']),
+      props: {
+        component: Link, //*** makes text go purple when hovered
+        to: PATHS.SUBSCRIPTION,
+      },
+      iconProps: {
+        component: SubscriptionIcon,
+        className: classes['snapped-premium-icon'],
+      },
+      contentProps: {
+        primary: 'Snapped+',
+        primaryTypographyProps: { className: classes['snapped-premium-text'] },
+      },
+    },
+
     contact: {
-      Icon: ContactIcon,
+      iconProps: {
+        component: ContactIcon,
+      },
       contentProps: {
         primary: 'Contact us',
-        secondary: 'Tissues 4 ur issues',
       },
     },
 
     settings: {
-      Icon: SettingsIcon,
       props: {
-        component: Link, //*** makes text go purple
+        component: Link, //*** makes text go purple when hovered
         to: PATHS.ACCOUNT,
       },
+      iconProps: {
+        component: SettingsIcon,
+      },
       contentProps: {
-        primary: 'Settings & Privacy',
-        secondary: 'Change shit',
+        primary: 'Settings',
       },
     },
 
     logout: {
-      Icon: () => <LogoutIcon color="secondary" />,
+      iconProps: {
+        component: LogoutIcon,
+        color: 'secondary',
+      },
       props: {
         onClick: () => dispatch(openConfirmDialog(DIALOGS.LOGOUT)),
       },
@@ -92,15 +131,23 @@ export const NavigationAccountList = () => {
     },
   };
 
-  return Object.values(items).map(({ Icon, props, contentProps }, index) => (
-    <MenuItem key={index} {...props} divider={false}>
-      {Icon && <MenuItemIcon children={<Icon />} />}
-      <MenuItemContent {...contentProps} />
+  return Object.values(items).map((data, index) => <NavigationAccountItem key={index} {...data} />);
+};
+
+const NavigationAccountItem = ({ className, props, iconProps, contentProps }) => {
+  const classes = useStyles();
+
+  return (
+    <MenuItem className={clsx(classes['navigation-account-item'], className)} {...props}>
+      {iconProps && <MenuItemIcon children={<Icon variant="h5" {...iconProps} />} />}
+      <MenuItemContent className={classes['navigation-account-item-content']} {...contentProps} />
     </MenuItem>
-  ));
+  );
 };
 
 /*
+
+<MenuItem> also accepts a Boolean `divider` prop (*false).
 
 1) On <MenuList> i.e. root <ul>, the `onClick` I provided it intentionally closes <SideNavigation> 
    (or the <DropdownManager>).

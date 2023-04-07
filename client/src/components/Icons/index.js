@@ -32,4 +32,4 @@ export {
 } from '@material-ui/icons';
 
 export { FcGoogle as GoogleIcon } from 'react-icons/fc';
-export { FaFacebook as FacebookIcon } from 'react-icons/fa';
+export { FaFacebook as FacebookIcon, FaCrown as SubscriptionIcon } from 'react-icons/fa';

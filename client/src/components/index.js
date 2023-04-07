@@ -73,6 +73,7 @@ export {
   ImageGridIcon,
   CircleIcon,
   CircleIconFilled,
+  SubscriptionIcon,
   //
   GoogleIcon,
   FacebookIcon,
