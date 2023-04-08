@@ -39,6 +39,7 @@ import useStyles from './styles';
 export const NavigationAccountList = () => {
   const dispatch = useDispatch();
 
+  const username = useSelector(selectAuthUserUsername);
   const isVerified = useSelector(selectAuthUserIsVerified);
   const isSubscriber = useSelector(selectIsAuthUserSubscriber);
 
@@ -61,8 +62,13 @@ export const NavigationAccountList = () => {
     }),
 
     profile: {
+      props: {
+        component: Link,
+        to: genProfilePath(username),
+      },
+
       contentProps: {
-        primary: <SeeProfileItem />,
+        primary: <SeeProfileItem username={username} />,
       },
     },
 
@@ -140,7 +146,11 @@ const NavigationAccountItem = ({ className, props, iconProps, contentProps }) =>
   return (
     <MenuItem className={clsx(classes['navigation-account-item'], className)} {...props}>
       {iconProps && <MenuItemIcon children={<Icon variant="h5" {...iconProps} />} />}
-      <MenuItemContent className={classes['navigation-account-item-content']} {...contentProps} />
+      <MenuItemContent
+        className={classes['navigation-account-item-content']}
+        {...contentProps}
+        primaryTypographyProps={{ className: classes['navigation-account-item-text'] }}
+      />
     </MenuItem>
   );
 };
@@ -158,26 +168,21 @@ const NavigationAccountItem = ({ className, props, iconProps, contentProps }) =>
 
 */
 
-function SeeProfileItem() {
-  const username = useSelector(selectAuthUserUsername);
+function SeeProfileItem({ username }) {
+  const classes = useStyles();
 
   return (
     <CardHeader
+      className={classes['navigaton-account-profile']}
       avatar={<AuthUserAvatar fontSize={32} border />}
       title={username}
       titleTypographyProps={{
         variant: 'body2',
         style: { fontWeight: 400, letterSpacing: 0 },
         noWrap: true,
-        // className: classes.cardTitle,
       }}
       subheader="See your profile"
-      subheaderTypographyProps={{
-        variant: 'subtitle2',
-        // className: classes.cardSubheader,
-      }}
-      component={Link}
-      to={genProfilePath(username)}
+      subheaderTypographyProps={{ variant: 'subtitle2' }}
     />
   );
 }
