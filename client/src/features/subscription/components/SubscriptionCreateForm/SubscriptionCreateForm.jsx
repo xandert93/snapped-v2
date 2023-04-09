@@ -122,7 +122,7 @@ const SubscriptionHeader = ({ name, imageURL }) => {
       <Grid item xs={2}>
         <SubscriptionImage src={imageURL} />
       </Grid>
-      <Grid item>
+      <Grid item xs={10}>
         <SubscriptionName name={name} />
       </Grid>
     </Grid>
@@ -170,7 +170,7 @@ const SubscriptionFeatureList = ({ name }) => {
   return (
     <List>
       {Object.entries(features[name]).map(([emoji, feature]) => (
-        <ListItem style={{ padding: 0 }}>
+        <ListItem className={classes['subscription-feature']} key={emoji}>
           <ListItemIcon children={emoji} />
           <ListItemText primary={feature} primaryTypographyProps={{ variant: 'body2' }} />
         </ListItem>

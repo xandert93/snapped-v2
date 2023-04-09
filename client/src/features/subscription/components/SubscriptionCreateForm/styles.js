@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 
-export default makeStyles(({ spacing, palette, mixins, shadows }) => ({
+export default makeStyles(({ spacing, palette, mixins, shadows, typography }) => ({
   'subscription-create-form': {
     padding: spacing(1),
     gap: spacing(2),
@@ -21,14 +21,17 @@ export default makeStyles(({ spacing, palette, mixins, shadows }) => ({
     position: 'relative',
     '&:last-child::after': {
       content: "'BEST VALUE'",
+      width: 200,
       position: 'absolute',
-      top: '8%',
-      right: '-8%',
-      padding: spacing(1, 6),
+      top: '14px',
+      right: '-60px',
+      padding: spacing(1, 0),
       transform: 'rotate(35deg)',
       //
-      color: 'white',
+      color: '#f5efe4',
+      fontSize: 14,
       fontWeight: 'bold',
+      textAlign: 'center',
       backgroundImage: 'linear-gradient(to right, orange, gold, orange)',
       boxShadow: shadows[4],
     },
@@ -44,7 +47,12 @@ export default makeStyles(({ spacing, palette, mixins, shadows }) => ({
   },
 
   'subscription-name': {
+    display: 'inline-block',
     ...mixins.gradientColor(palette.primary.main, palette.secondary.main),
+  },
+
+  'subscription-feature': {
+    padding: 0, // 8px 16px*
   },
 
   'subscription-price': {

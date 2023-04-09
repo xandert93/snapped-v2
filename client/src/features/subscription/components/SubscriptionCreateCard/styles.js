@@ -17,6 +17,7 @@ export default makeStyles(({ spacing, mixins }) => ({
   },
 
   'subscription-create-app-logo': {
+    minWidth: 56,
     width: '10%',
   },
 

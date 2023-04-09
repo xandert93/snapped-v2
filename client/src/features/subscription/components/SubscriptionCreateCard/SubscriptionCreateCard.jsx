@@ -1,6 +1,5 @@
-import { Card, CircularProgress, Typography, Grid } from '@material-ui/core';
+import { Card, CircularProgress, Typography, Grid, Fade } from '@material-ui/core';
 
-import { AppLogo } from '../../../../components';
 import { useHTTP, useMountEffect } from '../../../../hooks';
 import { useState } from 'react';
 import { productAPI } from '../../../commerce/product/api';
@@ -19,24 +18,24 @@ export const SubscriptionCreateCard = () => {
   useMountEffect(fetchSubscriptions);
 
   const classes = useStyles();
+
+  if (isFetching) return <CircularProgress size={40} />;
+
   return (
-    <Card
-      className={classes['subscription-create-card']}
-      elevation={8}
-      component={Grid}
-      container
-      direction="column"
-      justifyContent="center"
-      alignItems="center">
-      <AppLogo className={classes['subscription-create-app-logo']} />
-      <SubscriptionHeading />
-      <SubscriptionSubHeading />
-      {isFetching ? (
-        <CircularProgress size={40} />
-      ) : (
+    <Fade in>
+      <Card
+        className={classes['subscription-create-card']}
+        elevation={8}
+        component={Grid}
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center">
+        <SubscriptionHeading />
+        <SubscriptionSubHeading />
         <SubscriptionCreateForm subscriptions={subscriptions} />
-      )}
-    </Card>
+      </Card>
+    </Fade>
   );
 };
 
