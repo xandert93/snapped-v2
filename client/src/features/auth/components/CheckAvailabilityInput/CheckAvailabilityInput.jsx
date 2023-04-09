@@ -23,7 +23,7 @@ const defaultState = {
   message: '.', //so helper text <p> always mounted in DOM
 };
 
-// receives { type, name, label, minLength, value, onChange, autoFocus? }
+// receives { type, name, label, minLength, value, onChange, ? }
 export const CheckAvailabilityInput = (props) => {
   const { name, minLength, value: credential } = props;
 

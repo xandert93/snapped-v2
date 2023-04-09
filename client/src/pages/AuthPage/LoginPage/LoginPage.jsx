@@ -1,4 +1,4 @@
-import { useSetDocumentTitle } from '../../../hooks';
+import { useInput, useSetDocumentTitle } from '../../../hooks';
 import { login } from '../../../features/auth/state/auth-actions';
 import { AuthForm, AuthSubmitButton, PasswordInput } from '../../../features/auth/components';
 import { Input } from '../../../components';
@@ -21,9 +21,15 @@ export const LoginPage = () => {
 
   return (
     <AuthForm onSubmit={handleSubmit}>
-      <Input name="emailOrUsername" label="Username or Email" autoFocus />
-      <PasswordInput name="password" label="Password" />
+      <Input name="emailOrUsername" label="Username or Email" />
+      <LoginPasswordInput />
       <AuthSubmitButton children="Login" />
     </AuthForm>
   );
+};
+
+const LoginPasswordInput = () => {
+  const passwordProps = useInput();
+
+  return <PasswordInput name="password" label="Password" {...passwordProps} />;
 };

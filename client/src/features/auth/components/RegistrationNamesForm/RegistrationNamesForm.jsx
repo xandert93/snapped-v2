@@ -37,7 +37,6 @@ export const RegistrationNamesForm = (props) => {
         label="First name"
         value={firstName}
         {...firstNameProps}
-        autoFocus
         helperText={
           <CollapsingCaption in={firstNameProps.error} text="Please enter a valid first name" />
         }

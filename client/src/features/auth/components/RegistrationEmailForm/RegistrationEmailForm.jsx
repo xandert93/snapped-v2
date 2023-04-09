@@ -20,7 +20,6 @@ export const RegistrationEmailForm = (props) => {
         name="email"
         label="Email address"
         minLength={3}
-        autoFocus
         value={email}
         onChange={handleChange}
       />

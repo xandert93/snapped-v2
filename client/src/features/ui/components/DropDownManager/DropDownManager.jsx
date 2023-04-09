@@ -63,7 +63,7 @@ export const DropDownManager = () => {
 /*
 Other <Menu> props include:
 - disableEnforceFocus //while open, allows focus to leave the modal
-- disableAutoFocus //focus does not automatically move to modal on opening and back to previously focused element on close
+- disable //focus does not automatically move to modal on opening and back to previously focused element on close
 - disableRestoreFocus //once closed, focus will now not be restored to previously focused element
 */
 
@@ -89,7 +89,7 @@ Other <Menu> props include:
           <Paper className={classes.dropdownMenuPaper}>
             <ClickAwayListener onClickAway={handleClose}>
               <MenuList
-                autoFocusItem={isOpen}
+                Item={isOpen}
                 onClick={handleClose}
                 {...props} /* onKeyDown={handleListKeyDown}
               />

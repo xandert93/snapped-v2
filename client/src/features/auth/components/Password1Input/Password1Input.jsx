@@ -11,7 +11,6 @@ export const Password1Input = (props) => {
       label="Password"
       {...props}
       helperText={<PasswordStrengthIndicator password={password} />} //renders within Box
-      autoFocus
     />
   );
 };

@@ -18,7 +18,6 @@ export const RegistrationUsernameForm = (props) => {
         minLength={6}
         value={username}
         onChange={handleChange}
-        autoFocus
       />
     </AuthForm>
   );

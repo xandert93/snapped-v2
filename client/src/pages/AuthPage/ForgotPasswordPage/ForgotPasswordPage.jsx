@@ -19,7 +19,7 @@ export const ForgotPasswordPage = () => {
 
   return (
     <AuthForm onSubmit={handleSubmit}>
-      <Input ref={inputRef} type="email" name="email" label="Email address" autoFocus />
+      <Input ref={inputRef} type="email" name="email" label="Email address" />
       <AuthSubmitButton children="Request Reset" />
     </AuthForm>
   );
