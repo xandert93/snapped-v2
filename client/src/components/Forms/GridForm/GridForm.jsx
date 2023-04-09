@@ -7,5 +7,5 @@ import useStyles from './styles';
 export const GridForm = (props) => {
   const classes = useStyles();
 
-  return <Grid item container spacing={2} component={Form} {...props} />;
+  return <Grid container spacing={2} component={Form} {...props} />;
 };

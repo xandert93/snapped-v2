@@ -3,7 +3,7 @@ export const Form = ({ onSubmit, ...props }) => {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        onSubmit();
+        onSubmit(e);
       }}
       autoComplete="off"
       spellCheck="false"

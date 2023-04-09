@@ -22,7 +22,7 @@ export const SubscriptionCreateCard = () => {
   if (isFetching) return <CircularProgress size={40} />;
 
   return (
-    <Fade in>
+    <Fade in timeout={800}>
       <Card
         className={classes['subscription-create-card']}
         elevation={8}

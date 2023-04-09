@@ -56,7 +56,7 @@ function getDialogData(dialogId, args) {
     case LOGOUT: {
       return {
         title: 'logout?',
-        message: 'You will be missed 🥺😥😭',
+        message: 'You will be missed.',
         choices: ['no', 'yes'],
         onConfirm: logout,
         onConfirmText: 'Logging you out...',

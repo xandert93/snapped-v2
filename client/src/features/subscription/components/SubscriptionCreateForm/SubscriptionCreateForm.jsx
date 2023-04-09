@@ -17,7 +17,7 @@ import { useState } from 'react';
 import { formatCurrency } from '../../../../utils/formatters/currency-formatters';
 import { productAPI } from '../../../commerce/product/api';
 import { useHTTP } from '../../../../hooks';
-import { Link, LoadingButton } from '../../../../components';
+import { GradientButton, Link, LoadingButton } from '../../../../components';
 import { Form } from '../../../../components/Forms/Form';
 
 import useStyles from './styles';
