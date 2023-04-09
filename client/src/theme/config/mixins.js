@@ -13,4 +13,10 @@ export const mixins = {
     right: 0,
     bottom: 0,
   },
+
+  gradientColor: (color1, color2) => ({
+    backgroundImage: `linear-gradient(135deg, ${color1}, ${color2})`,
+    color: 'transparent',
+    '-webkit-background-clip': 'text',
+  }),
 };

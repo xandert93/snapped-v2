@@ -26,7 +26,7 @@ const productSchema = new Schema(
     },
     features: {
       type: [String],
-      default: ['Very, very good', 'Very, very cheap', 'One Pound Fiiiish'],
+      default: [],
       validate: [(features) => features.length <= 5, 'You can provide up to 5 features'],
     },
     stockCount: {

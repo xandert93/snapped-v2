@@ -26,6 +26,7 @@ const ExplorePage = lazy(() => import('./pages/ExplorePage'));
 const SnapPage = lazy(() => import('./pages/SnapPage'));
 const SearchPage = lazy(() => import('./pages/SearchPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+const SubscriptionPage = lazy(() => import('./pages/SubscriptionPage'));
 
 const BasketPage = lazy(() => import('./pages/Commerce/BasketPage'));
 const ShopPage = lazy(() => import('./pages/Commerce/ShopPage'));
@@ -59,6 +60,7 @@ export const App = () => {
                 <ProtectedRoute exact path={PATHS.SNAP} component={SnapPage} />
                 <ProtectedRoute path={PATHS.EXPLORE} component={ExplorePage} />
                 <ProtectedRoute path={PATHS.ACCOUNT} component={AccountPage} />
+                <ProtectedRoute path={PATHS.SUBSCRIPTION} component={SubscriptionPage} />
                 {/* 
                 
                 <ProtectedRoute path={PATHS.SHOP} component={ShopPage} />

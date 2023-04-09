@@ -31,6 +31,7 @@ export const ProfileHeader = ({ type, isAuthProfile }) => {
   const { snapCount, followCount, followerCount, avatarId, firstName, lastName, profile } =
     useSelector(selectUser(type));
 
+  const classes = useStyles();
   return (
     <>
       <Grid item container alignItems="center">
@@ -42,7 +43,7 @@ export const ProfileHeader = ({ type, isAuthProfile }) => {
         </Grid>
       </Grid>
       <Grid item>
-        <Typography component="h2" style={{ fontWeight: 'bold' }}>
+        <Typography className={classes['profile-fullname']} component="h2">
           {firstName} {lastName}
         </Typography>
         <Typography component="span" color="textSecondary">

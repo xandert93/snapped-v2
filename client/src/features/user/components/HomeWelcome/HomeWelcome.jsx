@@ -8,7 +8,7 @@ export const HomeWelcome = () => {
     <Card className={classes['greeting-card']}>
       <Grid container direction="column" spacing={2}>
         <Grid item>
-          <Typography component="h2" variant="h5" style={{ fontWeight: 'bold' }} paragraph>
+          <Typography component="h2" variant="h5" paragraph>
             Welcome to your timeline! 👋
           </Typography>
           <Typography paragraph>

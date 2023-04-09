@@ -6,7 +6,7 @@ export default makeStyles((theme) => ({
     width: '100%',
 
     '& > [role="radiogroup"]': {
-      justifyContent: 'center',
+      justifyContent: 'space-evenly',
 
       '& svg': {
         [isVPXs]: {

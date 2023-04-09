@@ -67,7 +67,7 @@ const TagsExploreTitle = (props) => {
   const title = tagsStr.split(',').join(', #');
 
   return (
-    <Typography variant="h5" component="h2" style={{ fontWeight: 'bold' }} {...props}>
+    <Typography variant="h5" component="h2" {...props}>
       Explore #{title}
     </Typography>
   );

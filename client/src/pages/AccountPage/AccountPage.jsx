@@ -7,7 +7,7 @@ import useStyles from './styles';
 
 import { Input, Link, Main } from '../../components';
 
-import { Subscription } from '../../features/commerce/product/components';
+import { Subscription } from '../../features/subscription/components';
 import { selectAuthUser } from '../../features/user/state/user-selectors';
 import { useSetDocumentTitle } from '../../hooks';
 import { openConfirmDialog } from '../../features/ui/state/ui-slice';
@@ -17,7 +17,6 @@ export const AccountPage = () => {
   useSetDocumentTitle('My Account');
   const { path, url } = useRouteMatch();
 
-  const classes = useStyles();
   return (
     <Main maxWidth="sm">
       <Grid spacing={2}>

@@ -1,11 +1,7 @@
 import { useSelector } from 'react-redux';
-import {
-  genDateAndTimeStr,
-  genRelativeDateStr,
-} from '../../../../utils/formatters/date-formatters';
-import { selectAuthUserSubscription } from '../../../user/state/user-selectors';
+import { genDateAndTimeStr, genRelativeDateStr } from '../../../utils/formatters/date-formatters';
+import { selectAuthUserSubscription } from '../../user/state/user-selectors';
 import { SubscriptionManagementButton } from './SubscriptionManagementButton';
-import { SubscriptionPurchaseButton } from './SubscriptionPurchaseButton';
 
 export const Subscription = () => {
   const { name, isTrialling, endingAt, isEnding } = useSelector(selectAuthUserSubscription);
@@ -14,13 +10,7 @@ export const Subscription = () => {
   const endDateStr = genDateAndTimeStr(endingAtDate);
   const remainingTime = genRelativeDateStr(endingAtDate);
 
-  if (!name)
-    return (
-      <>
-        <p>You are currently not on any plan</p>
-        <SubscriptionPurchaseButton />
-      </>
-    );
+  if (!name) return 'go get a subscription mate';
   else
     return (
       <>

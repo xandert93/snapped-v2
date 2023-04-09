@@ -153,6 +153,18 @@ export const genAppTheme = (isDarkMode) => {
 
       //<RadioGroup>'s labels
       MuiFormControlLabel: {
+        root: {
+          // both of these made my spacing slightly unpredictably
+          marginLeft: undefined, //  -11*
+          marginRight: undefined, // -16*
+        },
+
+        labelPlacementStart: {
+          // both of these made my spacing slightly unpredictably
+          marginLeft: undefined, //  -11*
+          marginRight: undefined, // -16*
+        },
+
         label: {
           [isVPXs]: {
             fontSize: spacing(2), //*1.17rem (slightly too big)

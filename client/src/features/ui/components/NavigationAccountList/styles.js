@@ -27,12 +27,4 @@ export default makeStyles((theme) => ({
     background: 'linear-gradient(60deg, #0000 20%, #8a6e08, #0000 70%) right/300% 100%',
     animation: '$shimmer 7s infinite linear',
   },
-
-  'snapped-premium-icon': {
-    color: 'gold',
-  },
-
-  'snapped-premium-text': {
-    color: 'gold',
-  },
 }));

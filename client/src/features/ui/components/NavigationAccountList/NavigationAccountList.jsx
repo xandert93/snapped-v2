@@ -93,11 +93,12 @@ export const NavigationAccountList = () => {
       },
       iconProps: {
         component: SubscriptionIcon,
-        className: classes['snapped-premium-icon'],
+        style: { color: 'gold' },
       },
       contentProps: {
         primary: 'Snapped+',
-        primaryTypographyProps: { className: classes['snapped-premium-text'] },
+        secondary: 'Exclusive features',
+        style: { color: 'gold' },
       },
     },
 

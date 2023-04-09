@@ -17,7 +17,7 @@ export const ProfileHeaderActivity = ({ snapCount, followerCount, followCount, t
     <>
       <Grid container justifyContent="center">
         <Grid item xs={4} container direction="column" alignItems="center">
-          <Typography style={{ fontWeight: 'bold' }}>snaps</Typography>
+          <Typography className={classes['activity-counter']}>snaps</Typography>
           <Typography>{snapCount}</Typography>
         </Grid>
         <Grid
@@ -28,7 +28,7 @@ export const ProfileHeaderActivity = ({ snapCount, followerCount, followCount, t
           component={ButtonBase}
           onClick={handleClick('followers')}
           style={{ borderRadius: 4 }}>
-          <Typography style={{ fontWeight: 'bold' }}>followers</Typography>
+          <Typography className={classes['activity-counter']}>followers</Typography>
           <Typography>{followerCount}</Typography>
         </Grid>
         <Grid
@@ -39,7 +39,7 @@ export const ProfileHeaderActivity = ({ snapCount, followerCount, followCount, t
           component={ButtonBase}
           onClick={handleClick('following')}
           style={{ borderRadius: 4 }}>
-          <Typography style={{ fontWeight: 'bold' }}>following</Typography>
+          <Typography className={classes['activity-counter']}>following</Typography>
           <Typography>{followCount}</Typography>
         </Grid>
       </Grid>

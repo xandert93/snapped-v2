@@ -35,14 +35,7 @@ export const NotificationMenu = () => {
       <AppBar position="sticky" color="inherit">
         <Toolbar
           variant="dense"
-          children={
-            <Typography
-              component="h2"
-              variant="h6"
-              style={{ fontWeight: 'bold' }}
-              children="Notifications"
-            />
-          }
+          children={<Typography component="h2" variant="h6" children="Notifications" />}
         />
       </AppBar>
       <Divider />
