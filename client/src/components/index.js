@@ -15,7 +15,7 @@ export { DialogHeader, DialogTitle } from './Dialog';
 
 export { Link } from './Link';
 
-export { GridForm } from './Forms';
+export { Form, GridForm } from './Forms';
 
 export { IlluminatedCard, CompactPaper } from './Cards';
 

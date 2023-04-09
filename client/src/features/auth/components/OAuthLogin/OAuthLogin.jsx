@@ -7,6 +7,7 @@ import { selectIsRegistering } from '../../state/auth-selectors';
 
 import { FacebookLoginButton } from './FacebookLoginButton';
 import { GoogleLoginButton } from './GoogleLoginButton';
+import { CenteredGrid } from '../../../../components';
 
 export const OAuthLogin = () => {
   const { pathname } = useLocation();
@@ -18,23 +19,19 @@ export const OAuthLogin = () => {
     return (
       <>
         <OAuthDivider />
-        <Grid item>
-          <GoogleLoginButton />
-        </Grid>
+        <GoogleLoginButton />
         <OAuthDivider />
-        <Grid item>
-          <FacebookLoginButton />
-        </Grid>
+        <FacebookLoginButton />
       </>
     );
 };
 
 const OAuthDivider = () => {
   return (
-    <Grid container justifyContent="center" alignItems="center">
+    <CenteredGrid>
       <Grid item xs={4} children={<Divider />} />
       <Grid item xs={2} children={<Typography align="center" children="or" />} />
       <Grid item xs={4} children={<Divider />} />
-    </Grid>
+    </CenteredGrid>
   );
 };

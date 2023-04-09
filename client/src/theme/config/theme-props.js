@@ -42,4 +42,8 @@ export const themeProps = {
   MuiSkeleton: {
     animation: 'wave',
   },
+
+  MuiPaper: {
+    elevation: 0, // *1 (a bit redundant whenever I use it)
+  },
 };

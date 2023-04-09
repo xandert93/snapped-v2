@@ -17,8 +17,7 @@ import { useState } from 'react';
 import { formatCurrency } from '../../../../utils/formatters/currency-formatters';
 import { productAPI } from '../../../commerce/product/api';
 import { useHTTP } from '../../../../hooks';
-import { GradientButton, Link, LoadingButton } from '../../../../components';
-import { Form } from '../../../../components/Forms/Form';
+import { GradientButton, Link, LoadingButton, Form } from '../../../../components';
 
 import useStyles from './styles';
 
@@ -143,7 +142,7 @@ const SubscriptionName = ({ name }) => {
       className={classes['subscription-name']}
       variant="h6"
       component="h4"
-      children={`${name} Subscription`}
+      children={`snapped+ ${name}`}
     />
   );
 };

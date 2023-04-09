@@ -47,7 +47,7 @@ const SubscriptionHeading = () => {
       className={classes['subscription-create-heading']}
       component="h2"
       variant="h5"
-      children="Subscribe to Snapped+"
+      children="Subscribe to snapped+"
     />
   );
 };

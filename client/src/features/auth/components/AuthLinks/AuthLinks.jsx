@@ -6,9 +6,9 @@ export const AuthLinks = ({ links }) => {
   const classes = useStyles();
 
   return (
-    <Grid item container justifyContent="center">
+    <Grid container justifyContent="center">
       {links.map(({ pretext, href, text }) => (
-        <Typography key={pretext}>
+        <Typography key={pretext} align="center">
           {pretext} <Link className={classes['auth-link']} to={href} children={text} />
         </Typography>
       ))}
