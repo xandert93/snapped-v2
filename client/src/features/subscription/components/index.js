@@ -1,5 +1,4 @@
 export { SubscriptionCreateForm } from './SubscriptionCreateForm';
-export { Subscription } from './Subscription';
-export { SubscriptionManagementButton } from './SubscriptionManagementButton';
-
+export { SubscriptionCard } from './SubscriptionCard';
 export { SubscriptionCreateCard } from './SubscriptionCreateCard';
+export { SubscriptionDetailsCard } from './SubscriptionDetailsCard';

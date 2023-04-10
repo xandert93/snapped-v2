@@ -1,6 +1,9 @@
 import { Server as SocketServer } from 'socket.io';
 import { verifyAccessToken } from '../utils/auth-utils.js';
 
+const { NODE_ENV } = process.env;
+const inProduction = NODE_ENV === 'production';
+
 const log = (str) => console.log('⚡️ Socket Server: ' + str);
 
 let io;
@@ -37,11 +40,14 @@ function handleConnection(socket) {
   const greetingStr = `${username} (${socketId.slice(0, 5)})`;
 
   socket.join(userId);
-  log(`${greetingStr} connected ✔️`);
 
-  socket.on('disconnect', () => {
-    log(`${greetingStr} disconnected ❌`);
-  });
+  if (!inProduction) {
+    log(`${greetingStr} connected ✔️`);
+
+    socket.on('disconnect', () => {
+      log(`${greetingStr} disconnected ❌`);
+    });
+  }
 }
 
 export const getIO = () => {

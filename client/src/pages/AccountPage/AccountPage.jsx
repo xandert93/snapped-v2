@@ -7,7 +7,6 @@ import useStyles from './styles';
 
 import { Input, Link, Main } from '../../components';
 
-import { Subscription } from '../../features/subscription/components';
 import { selectAuthUser } from '../../features/user/state/user-selectors';
 import { useSetDocumentTitle } from '../../hooks';
 import { openConfirmDialog } from '../../features/ui/state/ui-slice';
@@ -28,7 +27,7 @@ export const AccountPage = () => {
         </Grid>
       </Grid>
       <Switch>
-        <Route path={path + '/subscription'} component={Subscription} />
+        {/* <Route path={path + '/subscription'} component={Subscription} /> */}
         <Route path={path + '/delete'} component={DeleteAccountButton} />
       </Switch>
     </Main>

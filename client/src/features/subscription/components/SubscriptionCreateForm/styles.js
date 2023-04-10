@@ -2,7 +2,6 @@ import { makeStyles } from '@material-ui/core';
 
 export default makeStyles(({ spacing, palette, mixins, shadows, typography }) => ({
   'subscription-create-form': {
-    padding: spacing(1),
     gap: spacing(2),
   },
 

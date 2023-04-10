@@ -30,7 +30,7 @@ export const getSubscriptionCheckoutSession = ({ priceId, ...config }) => {
     mode: 'subscription',
     line_items: [{ price: priceId, quantity: 1 }],
     subscription_data: { trial_period_days: 7 }, // While free trials are fixable on individual plans, these don't get applied at Checkout. We now must configure it when creating Checkout instead
-    urls: { success: '/payment?success=true', cancellation: '/payment?cancelled=true' },
+    urls: { success: '/subscription?success=true', cancellation: '/subscription?cancelled=true' },
     ...config,
   });
 };
@@ -48,7 +48,7 @@ const getCheckoutSession = ({ customerId, urls, ...config }) => {
 export const getBillingSession = (customerId) => {
   return stripe.billingPortal.sessions.create({
     customer: customerId,
-    return_url: CLIENT_ORIGIN + '/account',
+    return_url: CLIENT_ORIGIN + '/subscription',
   });
 };
 
