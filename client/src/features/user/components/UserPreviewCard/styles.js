@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core';
 
 export default makeStyles(({ shape, palette, spacing }) => ({
   'user-preview-card': {
+    width: '100%',
     cursor: 'pointer',
     borderRadius: shape.borderRadius * 2,
 

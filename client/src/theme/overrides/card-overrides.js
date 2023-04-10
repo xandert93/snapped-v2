@@ -9,15 +9,16 @@ export const genCardOverrides = () => ({
 
   MuiCardHeader: {
     root: {
-      padding: '12px', // 16px*
-
-      // add margin-right to MuiCardHeader-avatar and MuiCardHeader-content
-      '& > :not(:last-child)': {
-        marginRight: '12px', // 16px*
-        [isVPMaxSm]: {
-          marginRight: '10px',
-        },
+      padding: 12, // 16px*
+      gap: 12,
+      [isVPXs]: {
+        paddingLeft: 8,
+        paddingRight: 8,
       },
+    },
+
+    avatar: {
+      marginRight: undefined, // using `gap` above instead
     },
 
     title: {

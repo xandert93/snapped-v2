@@ -6,15 +6,20 @@ import { HomeWelcome, HomeContent } from '../../features/user/components';
 
 import { selectShowHomeGreeting } from '../../features/user/state/user-selectors';
 
+import useStyles from './styles';
+
 export const HomePage = () => {
   useSetDocumentTitle('Home');
 
   const showHomeGreeting = useSelector(selectShowHomeGreeting);
 
+  const classes = useStyles();
   return (
     <>
       <SocketSnapsButton />
-      <SnapCreateMain>{showHomeGreeting ? <HomeWelcome /> : <HomeContent />}</SnapCreateMain>
+      <SnapCreateMain className={classes['home-page']}>
+        {showHomeGreeting ? <HomeWelcome /> : <HomeContent />}
+      </SnapCreateMain>
       <SnapCreateFAB />
     </>
   );

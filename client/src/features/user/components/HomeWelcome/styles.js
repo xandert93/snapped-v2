@@ -1,23 +1,28 @@
 import { makeStyles } from '@material-ui/core';
-import { isVPXs } from '../../../../theme/media-queries';
+import { isVPMinSm, isVPXs } from '../../../../theme/media-queries';
 
-export default makeStyles((theme) => ({
-  'greeting-card': {
-    margin: '0 auto',
+export default makeStyles(({ spacing, shadows }) => ({
+  'welcome-card': {
     maxWidth: 640,
-    boxShadow: theme.shadows[8],
-    padding: theme.spacing(4),
+    padding: spacing(4),
 
     [isVPXs]: {
       boxShadow: 'none',
       backgroundColor: 'transparent',
-      padding: theme.spacing(2),
+      padding: spacing(2),
     },
   },
 
   'suggested-users-container': {
-    maxHeight: '55vh', //*** super duper hacky 😂, but it will do for now. Scared to use flex-box in case it messes up main ui
-    overflowY: 'auto',
+    width: '100%',
+
+    [isVPMinSm]: {
+      // to get vertical scrolling dynamically on flex-item. Read here for expl: https://stackoverflow.com/a/14964944/13169785
+      // not applying on mobile because screen is too small for this to be effective
+      flex: '1 1 auto',
+      height: 0,
+      overflowY: 'auto',
+    },
 
     '&::-webkit-scrollbar': {
       display: 'none',

@@ -9,7 +9,7 @@ export const SuggestedUserList = ({ users }) => {
       <Box>
         <CardHeader
           title="Suggested for you 🤝"
-          titleTypographyProps={{ variant: 'h6', component: 'h2' }}
+          titleTypographyProps={{ variant: 'h6', component: 'h3' }}
         />
         <Box>
           {users.map((user) => (

@@ -178,10 +178,10 @@ export const genAppTheme = (isDarkMode) => {
           height: spacing(7), // 40*
           width: spacing(7), // 40*
 
-          // [isVPXs]: {
-          //   height: spacing(5),
-          //   width: spacing(5),
-          // },
+          [isVPXs]: {
+            height: spacing(6),
+            width: spacing(6),
+          },
         },
 
         // when no valid `src` is supplied

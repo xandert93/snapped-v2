@@ -3,14 +3,12 @@ import { isVPMaxSm, isVPXs } from '../../../../theme/media-queries';
 
 export default makeStyles(({ palette, spacing }) => ({
   'auth-paper': {
+    position: 'relative', // for <ThemeSwitch>
     maxWidth: 480,
     gap: spacing(2),
     padding: spacing(5, 6),
 
-    position: 'relative', // for <ThemeSwitch>
-
     [isVPXs]: {
-      backgroundColor: palette.background.default,
       boxShadow: 'none',
       padding: spacing(3, 4),
     },

@@ -1,4 +1,4 @@
-import { Card, Divider } from '@material-ui/core';
+import { Card } from '@material-ui/core';
 
 import { SnapCardHeader } from '../SnapCardHeader';
 import { SnapCardMedia } from '../SnapCardMedia';
@@ -18,7 +18,6 @@ export const FeedSnapCard = ({ id, watchSnap }) => {
     <FeedSnapCardProvider id={id}>
       <Card component="article" className={classes['feed-snap-card']} raised>
         <SnapCardHeader />
-        <Divider />
         <SnapCardMedia />
         <SnapCardTags />
         <SnapCardActions />

@@ -4,7 +4,6 @@ import { isVPMaxSm } from '../../../../theme/media-queries';
 export default makeStyles(({ spacing, mixins }) => ({
   'subscription-create-card': {
     maxWidth: 640,
-    margin: '0 auto',
     padding: spacing(3),
     gap: spacing(2),
 
@@ -14,11 +13,6 @@ export default makeStyles(({ spacing, mixins }) => ({
       padding: 'initial',
       gap: spacing(1.5),
     },
-  },
-
-  'subscription-create-app-logo': {
-    minWidth: 56,
-    width: '10%',
   },
 
   'subscription-create-heading': {

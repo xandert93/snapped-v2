@@ -88,3 +88,5 @@ export {
 export { ConditionalWrapper } from './Utilities';
 
 export { RetryRequest, ErrorBoundary } from './Error';
+
+export { FlexBox } from './Containers';
