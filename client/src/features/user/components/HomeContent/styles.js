@@ -1,11 +1,11 @@
 import { makeStyles } from '@material-ui/core';
-import { isVPMaxSm, isVPMinMd } from '../../../../theme/media-queries';
+import { isVPMaxSm, isVPMinMd, isVPXs } from '../../../../theme/media-queries';
 
 export default makeStyles((theme) => ({
   'feed-container': {
     maxWidth: 540,
   },
-  'suggestions-container': {
+  'suggested-snaps-container': {
     [isVPMinMd]: {
       maxWidth: 400,
     },
@@ -14,6 +14,8 @@ export default makeStyles((theme) => ({
       order: -1, // order first
     },
   },
+
+  'suggested-users-container': {},
 }));
 
 // sx prop is used in MUI5 to change ordering

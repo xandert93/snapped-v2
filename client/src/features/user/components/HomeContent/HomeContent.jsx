@@ -10,30 +10,31 @@ export const HomeContent = () => {
   const isMinMd = useMediaQuery(isVPMinMd);
 
   const classes = useStyles();
+
   return (
-    <Grid container justifyContent="center" spacing={2}>
+    <Grid container justifyContent="center" spacing={isMinMd ? 2 : 1}>
       <Grid
         className={classes['feed-container']} //
         item
-        xs={12}
-        md={7}>
+        md={7}
+        xs={12}>
         <Feed />
       </Grid>
       <Grid
         component="aside"
-        className={classes['suggestions-container']}
+        className={classes['suggested-snaps-container']}
         item
-        xs={12}
         md={5}
+        xs={12}
         container
-        spacing={2}
+        spacing={isMinMd ? 2 : 0}
         alignContent="flex-start">
         {isMinMd && (
           <Grid item xs={12}>
             <HomeSuggestedSnapsCard />
           </Grid>
         )}
-        <Grid item xs={12}>
+        <Grid className={classes['suggested-users-container']} item xs={12}>
           <HomeSuggestedUsersCard />
         </Grid>
       </Grid>
