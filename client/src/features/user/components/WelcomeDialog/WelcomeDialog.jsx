@@ -1,11 +1,11 @@
-import { DialogContent, DialogContentText } from '@material-ui/core';
+import { DialogContent, Grid, Typography } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import { selectAuthUserFirstName } from '../../state/user-selectors';
 
 import { UploadAvatar } from '..';
-import { CenteredGrid, DialogHeader, DialogTitle } from '../../../../components';
+import { DialogHeader, DialogTitle } from '../../../../components';
 
-import { ProfileFormDialog } from '../ProfileFormDialog';
+import { ProfileDialogContent } from '../ProfileFormDialog';
 
 export const WelcomeDialog = () => {
   const firstName = useSelector(selectAuthUserFirstName);
@@ -15,14 +15,13 @@ export const WelcomeDialog = () => {
       <DialogHeader>
         <DialogTitle children="Welcome to snapped!" />
       </DialogHeader>
-      <DialogContent style={{ flex: 'initial' }}>
-        <DialogContentText children={`Hi, ${firstName}! We see that you're new here!`} />
-        <CenteredGrid>
-          <UploadAvatar />
-        </CenteredGrid>
+      <DialogContent>
+        <Grid container direction="column" style={{ gap: 16 }}>
+          <Typography children={`Hi, ${firstName}! We see that you're new here!`} />
+          <UploadAvatar style={{ alignSelf: 'center' }} />
+          <ProfileDialogContent />
+        </Grid>
       </DialogContent>
-
-      <ProfileFormDialog />
     </>
   );
 };

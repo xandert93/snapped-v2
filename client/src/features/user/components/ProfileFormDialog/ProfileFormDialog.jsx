@@ -11,17 +11,21 @@ import { LoadingButton } from '../../../../components';
 import { isEqual as areEqual } from 'lodash';
 
 export const ProfileFormDialog = () => {
+  return (
+    <DialogContent>
+      <ProfileDialogContent />
+    </DialogContent>
+  );
+};
+
+export const ProfileDialogContent = () => {
   const initialDetails = useSelector(selectAuthUserProfile);
   const [details, setDetails] = useState(initialDetails);
 
   return (
     <>
-      <DialogContent>
-        <Box mb={3}>
-          <DialogContentText component="h3" children="Tell folks more about yourself:" />
-        </Box>
-        <ProfileForm details={details} setDetails={setDetails} />
-      </DialogContent>
+      <DialogContentText component="h3" children="Tell folks more about yourself:" />
+      <ProfileForm details={details} setDetails={setDetails} />
       <DialogActions>
         <DialogCloseButton children="Cancel" />
         <ProfileFormSubmitButton details={details} />
@@ -30,7 +34,7 @@ export const ProfileFormDialog = () => {
   );
 };
 
-export const ProfileFormSubmitButton = ({ details }) => {
+const ProfileFormSubmitButton = ({ details }) => {
   const currentDetails = useSelector(selectAuthUserProfile);
 
   const isClean = areEqual(currentDetails, details);

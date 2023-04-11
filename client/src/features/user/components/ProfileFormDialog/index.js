@@ -1,1 +1,1 @@
-export { ProfileFormDialog } from './ProfileFormDialog';
+export { ProfileFormDialog, ProfileDialogContent } from './ProfileFormDialog';
