@@ -1,0 +1,1 @@
+export { GradientTypography } from './GradientTypography';

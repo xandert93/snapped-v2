@@ -35,7 +35,13 @@ export { HomeRedirect, LoginRedirect } from './Routing';
 
 export { Tooltip } from './Tooltip';
 
-export { CollapsingCaption, LoadingText, ScrollEndText, NoDataText } from './Typographies';
+export {
+  GradientTypography,
+  CollapsingCaption,
+  LoadingText,
+  ScrollEndText,
+  NoDataText,
+} from './Typographies';
 
 export { SlideLeft, SlideUp, SlideDown } from './Transitions';
 

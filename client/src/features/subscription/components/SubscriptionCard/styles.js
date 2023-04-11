@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core';
-import { isVPMaxSm } from '../../../../theme/media-queries';
+import { isVPMaxSm, isVPXs } from '../../../../theme/media-queries';
 
 export default makeStyles(({ spacing }) => ({
   'subscription-card': {
@@ -8,7 +8,7 @@ export default makeStyles(({ spacing }) => ({
     padding: spacing(3),
     gap: spacing(2),
 
-    [isVPMaxSm]: {
+    [isVPXs]: {
       padding: spacing(1),
       gap: spacing(1.5),
 

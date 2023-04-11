@@ -4,8 +4,6 @@ import { RequestError } from '../utils/error-types.js';
 export const clientErrorResponder = (err, req, res, next) => {
   const { statusCode, name, message } = err;
 
-  console.log(err.message);
-
   if (err instanceof RequestError) res.status(statusCode).json(message);
   else next(err);
 };
@@ -13,7 +11,7 @@ export const clientErrorResponder = (err, req, res, next) => {
 export const errorLogger = (err, req, res, next) => {
   const [errStr, firstStackFrame] = err.stack.split('\n    at ', 2);
 
-  console.log(errStr.bold.red, firstStackFrame.yellow);
+  console.log(errStr.bold.red, firstStackFrame.yellow); // will produce `undefined undefined` in production, since colors is not imported
 
   next(err);
 };

@@ -18,6 +18,8 @@ import { LoadingButton } from '../../../../components';
 
 import { goldCrown, silverCrown } from '../../assets';
 
+import useStyles from './styles';
+
 export const SubscriptionDetailsCard = () => {
   return (
     <SubscriptionCard>
@@ -47,18 +49,23 @@ const SubscriptionDetails = () => {
   const endDateStr = genDateAndTimeStr(endingAtDate);
   const remainingTime = genRelativeDateStr(endingAtDate);
 
+  const classes = useStyles();
   return (
     <Grid container direction="column" style={{ gap: 16 }} component={Box} p={[2, 3]}>
-      <Typography>
-        You are on the <b>snapped+ {name}</b> plan
+      <Typography>You are subscribed to:</Typography>
+
+      <Typography variant="h5" component="p" align="center">
+        <b className={classes['subscription-name']}>snapped+ {name}</b>
       </Typography>
+
       {isTrialling && (
         <Typography>
           Your trial expires <b>{remainingTime}</b>
         </Typography>
       )}
-      <Typography>
-        Your subscription will {isEnding ? 'end' : 'renew'} on <b>{endDateStr}</b>
+      <Typography>Your subscription will {isEnding ? 'end' : 'renew'} on:</Typography>
+      <Typography variant="h6" component="p" align="center">
+        <b>{endDateStr}</b>
       </Typography>
 
       <Typography>
