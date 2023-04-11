@@ -39,7 +39,7 @@ export const openLoginDialog = () => (dispatch, getState) => {
   const isActivating = selectisActivating(getState());
   const { _isNew, isVerified } = selectAuthUser(getState());
 
-  if (!_isNew) dispatch(openDialog(DIALOGS.WELCOME));
+  if (_isNew) dispatch(openDialog(DIALOGS.WELCOME));
   else if (!isVerified && !isActivating) dispatch(openDialog(DIALOGS.ACTIVATION));
 };
 

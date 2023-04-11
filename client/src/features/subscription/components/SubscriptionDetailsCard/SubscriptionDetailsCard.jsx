@@ -21,18 +21,39 @@ import { goldCrown, silverCrown } from '../../assets';
 import useStyles from './styles';
 
 export const SubscriptionDetailsCard = () => {
+  const { name, isTrialling, endingAt, isEnding } = useSelector(selectAuthUserSubscription);
+
+  const endingAtDate = new Date(endingAt);
+  const endDateStr = genDateAndTimeStr(endingAtDate);
+  const remainingTime = genRelativeDateStr(endingAtDate);
+
+  const classes = useStyles();
   return (
     <SubscriptionCard>
-      <SubscriptionImage />
-      <SubscriptionDetails />
-      <SubscriptionManagementButton />
+      <Grid container direction="column" alignItems="center" style={{ gap: 24, padding: 16 }}>
+        <Typography>You are subscribed to:</Typography>
+
+        <Typography variant="h5" component="p" align="center">
+          <b className={classes['subscription-name']}>snapped+ {name}</b>
+        </Typography>
+        <SubscriptionImage name={name} />
+
+        {isTrialling && (
+          <Typography>
+            Your trial expires <b>{remainingTime}</b>
+          </Typography>
+        )}
+        <Typography>Your subscription will {isEnding ? 'end' : 'auto-renew'} on:</Typography>
+        <Typography variant="h6" component="p" align="center">
+          <b>{endDateStr}</b>
+        </Typography>
+        <SubscriptionManagementButton />
+      </Grid>
     </SubscriptionCard>
   );
 };
 
-const SubscriptionImage = () => {
-  const name = useSelector(selectAuthUserSubscriptionName);
-
+const SubscriptionImage = ({ name }) => {
   return (
     <img
       style={{ display: 'block', width: '20%' }}
@@ -51,27 +72,33 @@ const SubscriptionDetails = () => {
 
   const classes = useStyles();
   return (
-    <Grid container direction="column" style={{ gap: 16 }} component={Box} p={[2, 3]}>
-      <Typography>You are subscribed to:</Typography>
+    <SubscriptionCard>
+      <Grid
+        container
+        direction="column"
+        alignItems="center"
+        style={{ gap: 16 }}
+        component={Box}
+        p={[2, 3]}>
+        <Typography>You are subscribed to:</Typography>
 
-      <Typography variant="h5" component="p" align="center">
-        <b className={classes['subscription-name']}>snapped+ {name}</b>
-      </Typography>
-
-      {isTrialling && (
-        <Typography>
-          Your trial expires <b>{remainingTime}</b>
+        <Typography variant="h5" component="p" align="center">
+          <b className={classes['subscription-name']}>snapped+ {name}</b>
         </Typography>
-      )}
-      <Typography>Your subscription will {isEnding ? 'end' : 'renew'} on:</Typography>
-      <Typography variant="h6" component="p" align="center">
-        <b>{endDateStr}</b>
-      </Typography>
+        <SubscriptionImage name={name} />
 
-      <Typography>
-        Want to change your plan? Upgrade or cancel by clicking the button below
-      </Typography>
-    </Grid>
+        {isTrialling && (
+          <Typography>
+            Your trial expires <b>{remainingTime}</b>
+          </Typography>
+        )}
+        <Typography>Your subscription will {isEnding ? 'end' : 'auto-renew'} on:</Typography>
+        <Typography variant="h6" component="p" align="center">
+          <b>{endDateStr}</b>
+        </Typography>
+        <SubscriptionManagementButton />
+      </Grid>
+    </SubscriptionCard>
   );
 };
 

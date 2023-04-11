@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Box, DialogActions, DialogContent, DialogContentText } from '@material-ui/core';
+import { DialogActions, DialogContent, DialogContentText } from '@material-ui/core';
 
 import { DialogCloseButton } from '../../../ui/components';
 import { selectAuthUserProfile } from '../../state/user-selectors';
