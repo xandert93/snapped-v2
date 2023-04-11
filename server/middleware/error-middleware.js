@@ -4,6 +4,8 @@ import { RequestError } from '../utils/error-types.js';
 export const clientErrorResponder = (err, req, res, next) => {
   const { statusCode, name, message } = err;
 
+  console.log(err.message);
+
   if (err instanceof RequestError) res.status(statusCode).json(message);
   else next(err);
 };
