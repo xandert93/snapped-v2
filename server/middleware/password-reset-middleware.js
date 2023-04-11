@@ -1,6 +1,6 @@
-import { UserAuthCode } from '../models/index.js';
-
 import rateLimit from 'express-rate-limit';
+
+import { UserAuthCode } from '../models/index.js';
 
 export const verifyPasswordResetCredentials = async (req, res, next) => {
   const { method, path } = req;
@@ -14,7 +14,9 @@ export const verifyPasswordResetCredentials = async (req, res, next) => {
   } else res.sendStatus(200);
 };
 
-export const rateLimitPasswordReset = rateLimit({
+const ONE_DAY = 24 * 60 * 60 * 1000;
+
+export const limitPasswordReset = rateLimit({
   max: 2,
   windowMs: 24 * 60 * 60 * 1000,
   message: 'Daily password reset request limit exceeded',

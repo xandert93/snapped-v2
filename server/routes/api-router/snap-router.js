@@ -16,7 +16,7 @@ import {
   getHashtagSnapCount,
 } from '../../controllers/snap-controller.js';
 
-import { loadSnap } from '../../middleware/snap-middleware.js';
+import { loadSnap, rateLimitCreateSnap } from '../../middleware/snap-middleware.js';
 import { handleFilesUpload } from '../../middleware/multer-middleware.js';
 import { ensureUserIdMatch } from '../../middleware/user-middleware.js';
 import { ensureIsObjectId, loadScrollPagination } from '../../middleware/mongoose-middleware.js';
@@ -29,7 +29,13 @@ const snapRouter = express.Router();
 
 const MAX_IMAGE_COUNT = 5;
 
-snapRouter.post('/', handleFilesUpload('snap-image', MAX_IMAGE_COUNT), uploadImages, createSnap);
+snapRouter.post(
+  '/',
+  rateLimitCreateSnap,
+  handleFilesUpload('snap-image', MAX_IMAGE_COUNT),
+  uploadImages,
+  createSnap
+);
 snapRouter.get('/feed/:offset', loadScrollPagination('feed'), getFeedSnaps);
 snapRouter.get('/suggested', getSuggestedSnaps);
 
