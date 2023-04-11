@@ -102,6 +102,24 @@ export const getPrivateProfileSnaps = async (req, res) => {
   return res.json({ hasMore, snaps: foundSnaps });
 };
 
+// GET @ '/explore'
+export const getExploreSnaps = async (req, res) => {
+  const { userId } = req;
+
+  const { followingIds } = await UserFollowing.findOne({ userId }); // Get array of req.user's following
+
+  const pagination = { $sample: { size: 18 } }; // only return a random sample of 18 (for now)
+
+  const filter = {
+    creatorId: { $nin: [...followingIds, toObjectId(userId)] },
+    isPublic: true,
+  };
+
+  const foundSnaps = await Snap.aggregate(genSnapsPipeline(filter, userId, pagination));
+
+  return res.json({ snaps: foundSnaps });
+};
+
 // GET @ '/hashtags/:tags/count (copied most from below)
 export const getHashtagSnapCount = async (req, res) => {
   const { tags: tagsStr } = req.params;

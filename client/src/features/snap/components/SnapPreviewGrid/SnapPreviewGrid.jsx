@@ -108,7 +108,7 @@ const NoProfileSnaps = () => {
 
 */
 
-const SnapPreviewImageListItem = ({ id, watchSnap, ...props }) => {
+export const SnapPreviewImageListItem = ({ id, watchSnap, ...props }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const isMinMd = useMediaQuery(isVPMinMd);

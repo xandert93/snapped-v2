@@ -24,7 +24,7 @@ export const checkEmailOrUsername = async (req, res) => {
 
   const foundUser = await User.findByCredential(req.body);
   if (foundUser) throw new ConflictError(`${type} is already in use`);
-  else res.json({ message: `${type} is available ✔️` });
+  else res.json({ message: `${type} is available` });
 };
 
 //POST @ '/register' + { firstName, lastName, email, username, password, passwordConfirm }

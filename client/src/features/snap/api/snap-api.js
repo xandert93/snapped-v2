@@ -9,6 +9,8 @@ const getUsers = (userId, offset) => api.get(`/snaps/user/${userId}/${offset}`);
 
 const getUsersPrivate = (userId, offset) => api.get(`/snaps/user/${userId}/private/${offset}`);
 
+const getExplore = () => api.get('/snaps/explore');
+
 const getByHashtags = (tagsStr, offset) => api.get(`/snaps/hashtags/${tagsStr}/${offset}`);
 export const getByHashtagsCount = (tagsStr, offset) => api.get(`/snaps/hashtags/${tagsStr}/count`);
 
@@ -24,6 +26,8 @@ export const getSnapsRequest = ({ type, userId, tagsStr }) => {
     case 'auth-private':
       return (offset) => getUsersPrivate(userId, offset);
     case 'explore':
+      return getExplore;
+    case 'explore-tags':
       return (offset) => getByHashtags(tagsStr, offset);
     case 'search':
       return (offset) => getBySearch(`searchterm or whatever`);

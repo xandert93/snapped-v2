@@ -19,9 +19,9 @@ export const AccountPage = () => {
   return (
     <Main maxWidth="sm">
       <Grid spacing={2}>
-        <Grid item>
+        {/* <Grid item>
           <Link to={url + '/subscription'} children="Manage Your Subscription" />
-        </Grid>
+        </Grid> */}
         <Grid item>
           <Link to={url + '/delete'} children="Delete Your Account" />
         </Grid>

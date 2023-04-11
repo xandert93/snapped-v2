@@ -14,6 +14,7 @@ import {
   toggleSnapLike,
   getSnapLikers,
   getHashtagSnapCount,
+  getExploreSnaps,
 } from '../../controllers/snap-controller.js';
 
 import { loadSnap, rateLimitCreateSnap } from '../../middleware/snap-middleware.js';
@@ -48,6 +49,7 @@ snapRouter.get(
   getPrivateProfileSnaps
 );
 
+snapRouter.get('/explore', getExploreSnaps);
 snapRouter.get('/hashtags/:tags/count', getHashtagSnapCount);
 snapRouter.get('/hashtags/:tags/:offset', loadScrollPagination('explore'), getHashtagSnaps);
 snapRouter.get('/search', getSearchSnaps);

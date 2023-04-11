@@ -11,7 +11,7 @@ const genMessage = (progress) => {
       break;
 
     case 100:
-      text = '✔️ Just finishing up '; // files have reached server, but server then has to upload to Cloudinary...
+      text = 'Just finishing up '; // files have reached server, but server then has to upload to Cloudinary...
       break;
     default:
       text = '⌛ Uploading ';
