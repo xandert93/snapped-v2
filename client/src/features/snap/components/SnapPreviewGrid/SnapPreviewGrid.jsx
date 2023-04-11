@@ -1,12 +1,4 @@
-import {
-  Button,
-  Fade,
-  Grid,
-  ImageList,
-  ImageListItem,
-  Typography,
-  useMediaQuery,
-} from '@material-ui/core';
+import { Fade, Grid, ImageList, ImageListItem, Typography, useMediaQuery } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 
 import useStyles from './styles';

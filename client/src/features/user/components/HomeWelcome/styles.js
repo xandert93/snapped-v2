@@ -9,7 +9,7 @@ export default makeStyles(({ spacing, shadows }) => ({
     [isVPXs]: {
       boxShadow: 'none',
       backgroundColor: 'transparent',
-      padding: spacing(2),
+      padding: spacing(1),
     },
   },
 
