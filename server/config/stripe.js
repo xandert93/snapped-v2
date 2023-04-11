@@ -11,29 +11,25 @@ import {
   createOrder,
 } from '../controllers/stripe-webhook-controller.js';
 
+const inProduction = process.env.NODE_ENV === 'production';
+
 export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-// Also going to need to protect Webhook endpoint to check that it was actually Stripe making the call. Use Webhook signatures for this: https://stripe.com/docs/webhooks#webhook-endpoint-four
-// This is your Stripe CLI webhook secret for testing your endpoint locally.
-
 export const stripeEventHandler = async (req, res) => {
+  const body = req.body;
   const signature = req.headers['stripe-signature'];
 
-  // this code is used to confirm that the POST request to our webhook endpoint is actually from Stripe
-  // we take the request body and create a Stripe event from it. If successful, we handle the event.
+  let e;
+  try {
+    e = stripe.webhooks.constructEvent(body, signature, process.env.STRIPE_WEBHOOK_SECRET);
+  } catch (err) {
+    return res.status(400).send(`Webhook Error: ${err.message}`);
+  }
 
-  //   let e;
-  //   try {
-  //     e = stripe.webhooks.constructEvent(req.body, signature, process.env.STRIPE_WEBHOOK_SECRET);
-  //   } catch (err) {
-  //     return res.status(400).send(`Webhook Error: ${err.message}`);
-  //   }
-
-  const e = req.body;
   const data = e.data.object;
   const prevProps = e.data.previous_attributes; // only exists on `.updated` events. Contains changed properties and their old values
 
-  console.log({ stripe_event: e.type });
+  if (!inProduction) console.log({ stripe_event: e.type });
 
   // Handle the event
   switch (e.type) {

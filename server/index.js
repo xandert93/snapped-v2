@@ -31,6 +31,8 @@ await connectDB();
 
 const app = express();
 
+app.post('/stripe', express.raw({ type: 'application/json' }), stripeEventHandler);
+
 // app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
@@ -46,7 +48,6 @@ if (!inProduction) {
 // app.get('/csrf-token', getCSRFToken);
 app.use('/auth', authRouter);
 app.use('/api', apiRouter);
-app.post('/stripe', stripeEventHandler); // just for now. Don't think this is how it should be in long-term
 app.use(clientErrorResponder, errorLogger, errorResponder);
 
 if (inProduction) {
@@ -64,6 +65,9 @@ const server = app.listen(PORT, () =>
 initSocketServer(server);
 
 /*
+
+- stripe endpoint needs to go before we tell our server parse incoming bodies as JS objects. This is because stripeEventHandler expects it as raw
+
 - I have disabled `helmet` for now, because without configuration, it's not allowing the client to use Google Login, Facebook Login or Cloudinary scripts
 
 - importing 'colors' executes the module code, which modifies Node's String.prototype so that we can call new methods on any String
