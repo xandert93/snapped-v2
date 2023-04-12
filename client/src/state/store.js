@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import reducer from './root-reducer';
 import { socketMiddleware, httpMessageMiddleware } from './middleware';
 
-const inProduction = process.env === 'production';
+const inProduction = process.env.NODE_ENV === 'production';
 
 export const store = configureStore({
   reducer,
