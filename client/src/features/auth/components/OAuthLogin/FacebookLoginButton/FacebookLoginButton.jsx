@@ -18,7 +18,7 @@ export const FacebookLoginButton = (props) => {
 
   return (
     <FacebookLogin
-      appId={process.env.REACT_APP_FACEBOOK_APP_ID}
+      appId={process.env.REACT_APP_FACEBOOK_CLIENT_ID}
       fields="email, picture, name"
       // onClick={() => {}}
       // onFailure={() => {}}

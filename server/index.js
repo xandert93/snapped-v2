@@ -46,6 +46,7 @@ if (!inProduction) {
 }
 
 // app.get('/csrf-token', getCSRFToken);
+
 app.use('/auth', authRouter);
 app.use('/api', apiRouter);
 app.use(clientErrorResponder, errorLogger, errorResponder);
