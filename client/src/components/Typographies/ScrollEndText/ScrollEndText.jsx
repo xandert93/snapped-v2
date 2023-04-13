@@ -1,6 +1,6 @@
 import { Typography } from '@material-ui/core';
 
-export const ScrollEndText = () => {
+export const ScrollEndText = (props) => {
   return (
     <Typography
       variant="caption"
@@ -8,6 +8,7 @@ export const ScrollEndText = () => {
       align="center"
       color="textSecondary"
       children="You've reached the end"
+      {...props}
     />
   );
 };

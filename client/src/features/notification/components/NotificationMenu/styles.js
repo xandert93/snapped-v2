@@ -9,6 +9,7 @@ export default makeStyles((theme) => ({
       maxHeight: '50vh',
       overflowY: 'auto',
       ...scrollbar,
+      marginRight: -8, // getting some weird margin-right for some reason...
     },
   },
 }));

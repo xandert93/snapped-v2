@@ -1,4 +1,12 @@
-import { AppBar, Box, CircularProgress, Divider, Toolbar, Typography } from '@material-ui/core';
+import {
+  AppBar,
+  Box,
+  CircularProgress,
+  Divider,
+  Grid,
+  Toolbar,
+  Typography,
+} from '@material-ui/core';
 
 import { Notification } from '../Notification';
 import { useDispatch, useSelector } from 'react-redux';
@@ -19,7 +27,7 @@ export const NotificationMenu = () => {
   const notificationIds = useSelector(selectNotificationIds);
   const hasMore = useSelector(selectHasMoreNotifications);
 
-  const hasNotifications = notificationIds.length;
+  const hasNotifications = Boolean(notificationIds.length);
 
   const foundNoNotifications = !isFetching && !hasNotifications;
 
@@ -40,8 +48,14 @@ export const NotificationMenu = () => {
       </AppBar>
       <Divider />
 
-      <Box className={classes['notifications']}>
-        <Box>
+      <Grid
+        container
+        direction="column"
+        wrap="nowrap"
+        alignItems="center"
+        className={classes['notifications']}
+        style={{ gap: 8 }}>
+        <Box className={classes.hi}>
           {notificationIds.map((id) => (
             <Notification
               key={id}
@@ -49,23 +63,19 @@ export const NotificationMenu = () => {
               {...(id === notificationIds.at(-1) && { watchNotification })}
             />
           ))}
-          {!isFetching && !hasMore && hasNotifications && (
-            <Box p={1}>
-              <ScrollEndText />
-            </Box>
-          )}
+          {!isFetching && !hasMore && hasNotifications && <ScrollEndText gutterBottom />}
         </Box>
         {isFetching && (
-          <Box p={1} style={{ textAlign: 'center' }}>
+          <Box p={1}>
             <CircularProgress size="2rem" />
           </Box>
         )}
         {foundNoNotifications && (
           <Box p={1}>
-            <NoDataText align="center" children="You have no notifications yet" />
+            <NoDataText children="You have no notifications yet" />
           </Box>
         )}
-      </Box>
+      </Grid>
     </>
   );
 };
